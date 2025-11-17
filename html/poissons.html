@@ -6,6 +6,16 @@
   <title>PetShop - Chiens</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cartCountSpan = document.getElementById('cart-count');
+    if (!cartCountSpan) return;
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCountSpan.textContent = cart.length;
+});
+</script>
+
 <body>
   <!-- HEADER -->
   <header>
@@ -33,27 +43,27 @@
   <h2>🐠 Nourriture</h2>
   <div class="fish-grid">
 
-    <div class="fish-card">
+    <div class="fish-card" data-name="Flocons Tropicaux" data-price="139">
       <img src="../images/flacon.jpg" alt="Flocons pour poissons tropicaux">
       <h3>Flocons Tropicaux</h3>
       <p>Aliment complet pour la plupart des poissons tropicaux. Rehausse les couleurs naturelles.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 139 DH</p>
       <button class="fish-btn">Ajouter au panier</button>
     </div>
 
-    <div class="fish-card">
+    <div class="fish-card" data-name="Granulés Poissons Rouges" data-price="219">
       <img src="../images/granul.jpg" alt="Granulés pour poissons rouges">
       <h3>Granulés Poissons Rouges</h3>
       <p>Nourriture équilibrée sous forme de granulés flottants, facile à digérer.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 219 DH</p>
       <button class="fish-btn">Ajouter au panier</button>
     </div>
 
-    <div class="fish-card">
+    <div class="fish-card" data-name="Pastilles de Fond" data-price="149">
       <img src="../images/vifo.jpg" alt="Pastilles pour poissons de fond">
       <h3>Pastilles de Fond</h3>
       <p>Comprimés qui coulent rapidement pour les poissons de fond (Plecos, Corydoras).</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 149 DH</p>
       <button class="fish-btn">Ajouter au panier</button>
     </div>
 
@@ -281,6 +291,7 @@
       </div>
     </div>
     <p class="copyright">© 2025 PetShop — Your pet’s favorite place 🐾</p>
+    <script src="../js/card.js"></script>
   </footer>
 </body>
 </html>

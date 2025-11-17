@@ -6,6 +6,16 @@
   <title>PetShop - Chiens</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cartCountSpan = document.getElementById('cart-count');
+    if (!cartCountSpan) return;
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCountSpan.textContent = cart.length;
+});
+</script>
+
 <body>
   <!-- HEADER -->
   <header>
@@ -65,7 +75,7 @@
       <button class="rodent-btn">Ajouter au panier</button>
     </div>
 
-    <div class="rodent-card">
+    <div class="rodent-card"  >
       <img src="../images/legum.webp" alt="Friandises pour rongeurs">
       <h3>Friandises (Légumes séchés)</h3>
       <p>Bâtonnets de légumes et herbes séchées pour le plaisir et la stimulation.</p>
@@ -200,7 +210,7 @@
     <div class="rodent-card">
       <img src="../images/hamac ham.jpg" alt="Hamac pour furet/rat">
       <h3>Hamac pour furet/rat</h3>
-      <s<p>Se suspend aux barreaux de la cage pour un couchage en hauteur.</p>
+      <p>Se suspend aux barreaux de la cage pour un couchage en hauteur.</p>
       <p class="price">Prix : 89 DH</p>
       <button class="rodent-btn">Ajouter au panier</button>
     </div>

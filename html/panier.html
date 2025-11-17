@@ -36,29 +36,68 @@
   </div>
 
   <script>
-    const cartList = document.getElementById('cart-list');
-    const totalSpan = document.getElementById('total');
+const cartList = document.getElementById('cart-list');
+const totalSpan = document.getElementById('total');
 
-    function displayCart() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cartList.innerHTML = '';
-        let total = 0;
+function displayCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartList.innerHTML = '';
+    let total = 0;
 
-        cart.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = `${item.name} - ${item.price} DH`;
-            cartList.appendChild(li);
-            total += item.price;
+    cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.alignItems = 'center';
+        li.style.gap = '10px';
+
+        // Image du produit
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = item.name;
+        img.style.width = '90px';
+        img.style.height = '90px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '5px';
+
+        // Nom + prix
+        const span = document.createElement('span');
+        span.textContent = `${item.name} - ${item.price} DH`;
+        span.style.flex = '1';
+
+        // Bouton supprimer
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Supprimer';
+        removeBtn.className = 'remove-btn';
+        removeBtn.addEventListener('click', () => {
+            removeFromCart(index);
         });
 
-        totalSpan.textContent = total.toFixed(2);
+        li.appendChild(img);
+        li.appendChild(span);
+        li.appendChild(removeBtn);
+        cartList.appendChild(li);
 
-        // Mettre à jour le compteur dans l'header
-        const cartCountSpan = document.getElementById('cart-count');
-        if (cartCountSpan) cartCountSpan.textContent = cart.length;
-    }
+        total += item.price;
+    });
 
-    displayCart();
-  </script>
+    totalSpan.textContent = total.toFixed(2);
+
+    // Mettre à jour le compteur dans l'header
+    const cartCountSpan = document.getElementById('cart-count');
+    if (cartCountSpan) cartCountSpan.textContent = cart.length;
+}
+
+// Fonction pour supprimer un article du panier
+function removeFromCart(index) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1); // supprime l'article à l'index donné
+    localStorage.setItem('cart', JSON.stringify(cart)); // sauvegarde
+    displayCart(); // réaffiche le panier
+}
+
+displayCart();
+</script>
+
+
 </body>
 </html>
