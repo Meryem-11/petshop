@@ -1,0 +1,64 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".cat-btn, .dog-btn, .bird-btn, .fish-btn, .rodent-btn");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function () {
+      const card = this.closest(".cat-card, .dog-card, .bird-card, .fish-card, .rodent-card");
+      if (!card) return;
+
+      const product = {
+        name: card.getAttribute("data-name"),
+        price: parseFloat(card.getAttribute("data-price")) || 0,
+        image: card.querySelector("img") ? card.querySelector("img").src : ""
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      updateCart();
+      alert(product.name + " a été ajouté au panier !");
+    });
+  });
+
+  function updateCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartList = document.getElementById("cart-list");
+    const cartTotal = document.getElementById("cart-total");
+    if (!cartList || !cartTotal) return;
+
+    cartList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+      const li = document.createElement("li");
+      li.style.display = "flex";
+      li.style.alignItems = "center";
+      li.style.gap = "10px";
+
+      // Image
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = item.name;
+      img.style.width = "50px";
+      img.style.height = "50px";
+      img.style.objectFit = "cover";
+      img.style.borderRadius = "5px";
+
+      // Texte
+      const span = document.createElement("span");
+      span.textContent = `${item.name} - ${item.price} DH`;
+      span.style.flex = "1";
+
+      li.appendChild(img);
+      li.appendChild(span);
+      cartList.appendChild(li);
+
+      total += item.price;
+    });
+
+    cartTotal.textContent = total;
+  }
+
+  updateCart();
+});
