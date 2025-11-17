@@ -6,6 +6,16 @@
   <title>PetShop - Chiens</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cartCountSpan = document.getElementById('cart-count');
+    if (!cartCountSpan) return;
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCountSpan.textContent = cart.length;
+});
+</script>
+
 <body>
   <!-- HEADER -->
   <header>
