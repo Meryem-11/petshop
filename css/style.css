@@ -2448,7 +2448,7 @@ body {
         padding: 50px 20px;
     }
     h2 {
-        font-size: 2.2rem !important; /* Force la taille du titre */
+        font-size: 2.2rem !important;
         margin-bottom: 30px !important;
     }
     .newsletter-form {
