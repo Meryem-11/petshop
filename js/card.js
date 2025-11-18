@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("cart", JSON.stringify(cart));
 
       updateCart();
+      updateCartCount();
       alert(product.name + " a été ajouté au panier !");
     });
   });
@@ -60,5 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
     cartTotal.textContent = total;
   }
 
+  function updateCartCount() {
+    const cartCountSpan = document.getElementById("cart-count");
+    if (!cartCountSpan) return;
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cartCountSpan.textContent = cart.length;
+  }
+
   updateCart();
+  updateCartCount();
 });
