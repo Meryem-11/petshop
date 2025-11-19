@@ -2354,115 +2354,145 @@ body {
   }
 }
 
+
 /* RESPONSIVE */
+
 /* --- Laptops et Écrans Moyens (max-width: 1366px) --- */
 @media screen and (max-width: 1366px) {
-    
+
     header {
         display: flex;
         align-items: center;
-        justify-content: flex-start; 
-        padding: 10px 30px; 
+        justify-content: flex-start;
+        padding: 10px 30px;
     }
+
     .logo img {
         width: 45px;
         height: 45px;
     }
+
     .logo h1 {
         font-size: 1.6rem;
         white-space: nowrap;
-        margin-right: 20px; 
+        margin-right: 20px;
     }
+
     nav {
-        margin-left: auto; 
+        margin-left: auto;
         display: flex;
         align-items: center;
     }
+
     nav ul {
         display: flex;
         align-items: center;
-        gap: 5px; 
+        gap: 5px;
         margin: 0;
         padding: 0;
     }
+
     nav a {
         padding: 8px 12px;
         font-size: 0.9rem;
-        white-space: nowrap; 
+        white-space: nowrap;
     }
-    .header-buttons, .btn-login, .cart-icon {
-        display: flex; /
+
+    .header-buttons,
+    .btn-login,
+    .cart-icon {
+        display: flex;
         align-items: center;
         gap: 10px;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
+
     .btn-login {
         padding: 8px 20px;
         font-size: 0.9rem;
         white-space: nowrap;
     }
+
     .cart-icon {
         font-size: 0.9rem;
         white-space: nowrap;
     }
 }
 
+
+
 /* --- Mobiles et Tablettes Mode Portrait (max-width: 768px) --- */
 @media screen and (max-width: 768px) {
-    
-    
+
     header {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
     }
+
     nav ul {
         flex-direction: column;
         gap: 15px;
         width: 100%;
         padding: 0;
     }
+
     nav a {
         display: block;
         text-align: center;
         width: 100%;
     }
+
     .header-buttons {
         margin-top: 15px;
         display: flex;
         gap: 15px;
         justify-content: center;
     }
+
     .banner h2 {
         font-size: 2.2rem;
     }
+
     .banner p {
         font-size: 1.1rem;
     }
+
     .btn-primary {
         padding: 12px 30px;
-        width: 100%; 
+        width: 100%;
         max-width: 300px;
     }
-    .categories, .popular-products, .stats-section, .why-choose-us, .promotions-section, .testimonials-section {
+
+    .categories,
+    .popular-products,
+    .stats-section,
+    .why-choose-us,
+    .promotions-section,
+    .testimonials-section {
         padding: 50px 20px;
     }
+
     h2 {
         font-size: 2.2rem !important;
         margin-bottom: 30px !important;
     }
+
     .newsletter-form {
         flex-direction: column;
         width: 100%;
     }
+
     .newsletter-form input {
         width: 100%;
         margin-bottom: 0;
     }
+
     .btn-newsletter {
         width: 100%;
         justify-content: center;
     }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -2470,35 +2500,48 @@ body {
     }
 }
 
+
+
 /* --- Petits Mobiles (max-width: 480px) --- */
 @media screen and (max-width: 480px) {
-    
+
     .logo h1 {
         font-size: 1.5rem;
     }
+
     .banner h2 {
         font-size: 1.8rem;
     }
+
     .product-card {
-        width: 100%; 
+        width: 100%;
         min-height: auto;
     }
+
     .product-grid {
         gap: 20px;
     }
+
     .stat-card {
         width: 100%;
         padding: 20px;
     }
+
     .promo-banner {
         padding: 30px 20px;
     }
+
     .promo-banner h2 {
         font-size: 1.8rem;
     }
+
     .btn-promo {
         width: 100%;
         padding: 12px 20px;
         font-size: 1rem;
     }
 }
+
+
+
+
