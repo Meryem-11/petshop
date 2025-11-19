@@ -2354,135 +2354,73 @@ body {
   }
 }
 
+
 /* RESPONSIVE */
-@media (max-width: 900px) {
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .login-container {
-    padding: 30px 20px;
-  }
+/* --- Laptops et Écrans Moyens (max-width: 1366px) --- */
+@media screen and (max-width: 1366px) {
 
-  .form-options {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 30px;
+    }
 
-  .footer-content {
-    flex-direction: column;
-  }
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
 
-  .footer-column {
-    min-width: 100%;
-    margin-bottom: 30px;
-  }
+    .logo h1 {
+        font-size: 1.6rem;
+        white-space: nowrap;
+        margin-right: 20px;
+    }
 
-  .footer-subscribe {
-    max-width: 100%;
-  }
+    nav {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
 
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+    }
 
-  .footer-legal {
-    justify-content: center;
-  }
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
 
-  .footer-social {
-    justify-content: center;
-  }
+    .header-buttons,
+    .btn-login,
+    .cart-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 10px;
+    }
 
-  /* Responsive pour les nouvelles sections */
-  .banner h2 {
-    font-size: 2.2rem;
-  }
+    .btn-login {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
 
-  .banner p {
-    font-size: 1.1rem;
-  }
-
-  .stats-container {
-    gap: 20px;
-  }
-
-  .stat-card {
-    min-width: 150px;
-    padding: 30px 20px;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  .newsletter-form input,
-  .btn-newsletter {
-    width: 100%;
-  }
-
-  .promo-banner {
-    padding: 40px 20px;
-  }
-
-  .promo-banner h2 {
-    font-size: 1.8rem;
-  }
-
-  .promo-banner p {
-    font-size: 1.1rem;
-  }
-
-  .why-choose-us h2,
-  .testimonials-section h2,
-  .popular-products h2,
-  .categories h2 {
-    font-size: 2rem;
-  }
-
-  /* Navigation responsive */
-  header {
-    padding: 15px 20px;
-    flex-wrap: wrap;
-  }
-
-  nav ul {
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-
-  .banner-content {
-    padding: 30px 20px;
-  }
+    .cart-icon {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
 }
 /* ===== MODE SOMBRE ===== */
 
+ HEAD
 body.dark-mode {
   background-color: #000 !important;
   color: #e6e6e6 !important;
@@ -3001,3 +2939,130 @@ body.dark-mode {
   line-height: 1.6;
   overflow-x: hidden;
 }
+
+
+
+/* --- Mobiles et Tablettes Mode Portrait (max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header-buttons {
+        margin-top: 15px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .banner h2 {
+        font-size: 2.2rem;
+    }
+
+    .banner p {
+        font-size: 1.1rem;
+    }
+
+    .btn-primary {
+        padding: 12px 30px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .categories,
+    .popular-products,
+    .stats-section,
+    .why-choose-us,
+    .promotions-section,
+    .testimonials-section {
+        padding: 50px 20px;
+    }
+
+    h2 {
+        font-size: 2.2rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .btn-newsletter {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+
+/* --- Petits Mobiles (max-width: 480px) --- */
+@media screen and (max-width: 480px) {
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .banner h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-card {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .product-grid {
+        gap: 20px;
+    }
+
+    .stat-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .promo-banner {
+        padding: 30px 20px;
+    }
+
+    .promo-banner h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-promo {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+
+
+
