@@ -2940,6 +2940,111 @@ body.dark-mode {
   overflow-x: hidden;
 }
 
+/* Bouton général */
+.glow-toggle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #8BC34A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* Icône par défaut (Light Mode = Soleil) */
+.glow-toggle .icon {
+  font-size: 22px;
+  transition: color 0.4s, text-shadow 0.4s, transform 0.4s;
+  color: #f1c40f;
+  text-shadow: 0 0 10px rgba(255, 196, 0, 0.6);
+}
+
+/* Mode sombre */
+body.dark-mode .glow-toggle {
+  background: #8BC34A;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+}
+
+/* Icône en mode sombre (Lune Glow bleu) */
+body.dark-mode .glow-toggle .icon {
+  color: #73c7ff;
+  text-shadow: 0 0 15px rgba(0, 150, 255, 0.8);
+  transform: rotate(20deg);
+}
+
+/* Animation au clic */
+.glow-toggle:active .icon {
+  transform: scale(0.9);
+}
+
+/* RESPONSIVE */
+
+/* --- Laptops et Écrans Moyens (max-width: 1366px) --- */
+@media screen and (max-width: 1366px) {
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 30px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo h1 {
+        font-size: 1.6rem;
+        white-space: nowrap;
+        margin-right: 20px;
+    }
+
+    nav {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .header-buttons,
+    .btn-login,
+    .cart-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 10px;
+    }
+
+    .btn-login {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .cart-icon {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+}
+
 
 
 /* --- Mobiles et Tablettes Mode Portrait (max-width: 768px) --- */
@@ -3062,7 +3167,3 @@ body.dark-mode {
         font-size: 1rem;
     }
 }
-
-
-
-
