@@ -2981,189 +2981,86 @@ body.dark-mode .glow-toggle .icon {
   transform: scale(0.9);
 }
 
-/* RESPONSIVE */
-
-/* --- Laptops et Écrans Moyens (max-width: 1366px) --- */
-@media screen and (max-width: 1366px) {
-
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 10px 30px;
-    }
-
-    .logo img {
-        width: 45px;
-        height: 45px;
-    }
-
-    .logo h1 {
-        font-size: 1.6rem;
-        white-space: nowrap;
-        margin-right: 20px;
-    }
-
-    nav {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-    }
-
-    nav ul {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        margin: 0;
-        padding: 0;
-    }
-
-    nav a {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-        white-space: nowrap;
-    }
-
-    .header-buttons,
-    .btn-login,
-    .cart-icon {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-left: 10px;
-    }
-
-    .btn-login {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-        white-space: nowrap;
-    }
-
-    .cart-icon {
-        font-size: 0.9rem;
-        white-space: nowrap;
-    }
-}
-
-
-
-/* --- Mobiles et Tablettes Mode Portrait (max-width: 768px) --- */
+/* Media query pour tablettes et mobiles */
 @media screen and (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: column !important;
+    padding: 15px 20px !important;
+  }
 
-    header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
+  .logo img {
+    width: 45px !important;
+    height: 45px !important;
+  }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        padding: 0;
-    }
+  .logo h1 {
+    font-size: 1.5rem !important;
+  }
 
-    nav a {
-        display: block;
-        text-align: center;
-        width: 100%;
-    }
+  nav ul {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
 
-    .header-buttons {
-        margin-top: 15px;
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-    }
+  nav a {
+    padding: 8px 12px !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
 
-    .banner h2 {
-        font-size: 2.2rem;
-    }
+  /* Banner */
+  .banner {
+    min-height: 400px !important;
+    padding: 60px 15px !important;
+  }
 
-    .banner p {
-        font-size: 1.1rem;
-    }
+  .banner-content {
+    padding: 30px 20px !important;
+  }
 
-    .btn-primary {
-        padding: 12px 30px;
-        width: 100%;
-        max-width: 300px;
-    }
+  .banner h2 {
+    font-size: 2.2rem !important;
+  }
 
-    .categories,
-    .popular-products,
-    .stats-section,
-    .why-choose-us,
-    .promotions-section,
-    .testimonials-section {
-        padding: 50px 20px;
-    }
+  .banner p {
+    font-size: 1rem !important;
+  }
 
-    h2 {
-        font-size: 2.2rem !important;
-        margin-bottom: 30px !important;
-    }
+  .btn-primary {
+    padding: 12px 25px !important;
+    width: 100% !important;
+    max-width: 250px !important;
+  }
 
-    .newsletter-form {
-        flex-direction: column;
-        width: 100%;
-    }
+  /* Grilles de cartes */
+  .category-card, .product-card {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
 
-    .newsletter-form input {
-        width: 100%;
-        margin-bottom: 0;
-    }
-
-    .btn-newsletter {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
 }
 
-
-
-/* --- Petits Mobiles (max-width: 480px) --- */
+/* Media query pour petits mobiles */
 @media screen and (max-width: 480px) {
+  .banner h2 {
+    font-size: 1.8rem !important;
+  }
 
-    .logo h1 {
-        font-size: 1.5rem;
-    }
+  .banner p {
+    font-size: 0.9rem !important;
+  }
 
-    .banner h2 {
-        font-size: 1.8rem;
-    }
+  header {
+    padding: 10px 15px !important;
+  }
 
-    .product-card {
-        width: 100%;
-        min-height: auto;
-    }
-
-    .product-grid {
-        gap: 20px;
-    }
-
-    .stat-card {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .promo-banner {
-        padding: 30px 20px;
-    }
-
-    .promo-banner h2 {
-        font-size: 1.8rem;
-    }
-
-    .btn-promo {
-        width: 100%;
-        padding: 12px 20px;
-        font-size: 1rem;
-    }
+  .btn-primary {
+    padding: 10px 20px !important;
+  }
 }

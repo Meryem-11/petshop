@@ -1,3 +1,4 @@
+
 // Script pour gérer l'effet de scroll sur le header
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('header');
