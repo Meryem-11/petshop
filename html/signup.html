@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion - PetShop</title>
+  <title>Créer un compte - PetShop</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/signup.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -38,20 +39,27 @@ document.addEventListener("DOMContentLoaded", function() {
         <li><a href="./contact.html">Contact</a></li>
         <li><a href="./login.html" class="btn-login">Connexion</a></li>
         <li><a href="./panier.html" class="cart-icon">🛒 Panier (<span id="cart-count">0</span>)</a></li>
-        <li>
-<button id="theme-toggle" class="glow-toggle">
-    <span class="icon"></span></button></li>
       </ul>
     </nav>
   </header>
 
-  <!-- SECTION LOGIN -->
-  <section class="login-section">
-    <div class="login-container">
-      <h2>Connexion</h2>
-      <p>Connectez-vous à votre compte PetShop 🐾</p>
+  <!-- SECTION SIGN UP -->
+  <section class="signup-section">
+    <div class="signup-container">
+      <h2>Créer un compte</h2>
+      <p>Rejoignez PetShop et commencez votre aventure 🐾</p>
 
-      <form class="login-form" id="loginForm">
+      <form class="signup-form" id="signupForm">
+        <!-- Nom complet -->
+        <div class="form-group">
+          <label for="fullname">Nom complet</label>
+          <div class="input-wrapper">
+            <ion-icon name="person-outline" class="input-icon"></ion-icon>
+            <input type="text" id="fullname" name="fullname" placeholder="Votre nom complet" required>
+          </div>
+        </div>
+
+        <!-- Email -->
         <div class="form-group">
           <label for="email">Adresse e-mail</label>
           <div class="input-wrapper">
@@ -60,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
           </div>
         </div>
 
+        <!-- Mot de passe -->
         <div class="form-group">
           <label for="password">Mot de passe</label>
           <div class="input-wrapper">
@@ -68,18 +77,27 @@ document.addEventListener("DOMContentLoaded", function() {
           </div>
         </div>
 
-        <div class="form-options">
-          <label class="remember-me">
-            <input type="checkbox" name="remember">
-            <span>Se souvenir de moi</span>
-          </label>
-          <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+        <!-- Confirmation mot de passe -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirmer le mot de passe</label>
+          <div class="input-wrapper">
+            <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmez votre mot de passe" required>
+          </div>
         </div>
 
-        <button type="submit" class="btn-primary">Se connecter</button>
+        <!-- Option newsletter / conditions (inspiré du login form options) -->
+        <div class="form-options">
+          <label class="accept-terms">
+            <input type="checkbox" name="terms" required>
+            <span>J'accepte les conditions générales</span>
+          </label>
+        </div>
 
-        <p class="signup-link">
-          Vous n'avez pas de compte ? <a href="signup.html">Créer un compte</a>
+        <button type="submit" class="btn-primary">Créer un compte</button>
+
+        <p class="signin-link">
+          Vous avez déjà un compte ? <a href="login.html">Se connecter</a>
         </p>
       </form>
     </div>
@@ -151,9 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
   </footer>
 
   <script src="../js/card.js"></script>
-  <script src="../js/login.js"></script>
+  <script src="../js/signup.js"></script>
   <script src="../js/header.js"></script>
-   <script src="../js/theme.js"></script>
 </body>
 </html>
-

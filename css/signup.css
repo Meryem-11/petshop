@@ -1,0 +1,153 @@
+/* ===== PAGE SIGNUP ===== */
+.signup-section {
+  background-color: #d4e7f1; /* Même fond que la page Login */
+  padding: 60px 20px;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== CONTAINER ===== */
+.signup-container {
+  background-color: #ffffff;
+  padding: 40px 35px;
+  width: 420px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease;
+  text-align: center;
+}
+
+.signup-container h2 {
+  color: #4CAF50; /* Titre comme Login */
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.signup-container p {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+/* ===== FORM ===== */
+.signup-form {
+  text-align: left;
+}
+
+/* ===== LABELS ===== */
+.form-group label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ===== INPUTS ===== */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1.4px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #8BC34A; /* Même couleur focus que login */
+}
+
+/* ===== ICONES ===== */
+.input-icon {
+  position: absolute;
+  left: 15px;
+  font-size: 1.2rem;
+  color: #8BC34A; /* même vert icônes login */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.input-wrapper:focus-within .input-icon {
+  color: #FF9800; /* orange focus icône */
+}
+
+/* ===== CONDITIONS ===== */
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 20px;
+}
+
+.accept-terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.accept-terms input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+/* ===== BUTTON ===== */
+.btn-primary {
+  width: 100%;
+  padding: 12px 25px;
+  background-color: #4CAF50; /* Vert principal */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #43a047; /* Vert plus foncé */
+}
+
+/* ===== LINK ===== */
+.signin-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signin-link a {
+  color: #8BC34A;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.signin-link a:hover {
+  color: #FF9800;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
