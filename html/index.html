@@ -26,7 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
       <img src="../images/logo.png" alt="Logo PetShop">
       <h1>PetShop</h1>
     </div>
-    <nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-menu" id="nav-menu">
       <ul>
         <li><a href="./index.html">Accueil</a></li>
         <li><a href="./chiens.html">Chiens</a></li>
@@ -321,10 +326,9 @@ document.addEventListener("DOMContentLoaded", function() {
     <p class="copyright">© 2025 PetShop — Your pet's favorite place 🐾</p>
   </footer>
 
-  <script src="js/script.js"></script>
-  <script src="js/header.js"></script>
-  <script src="js/homepage.js"></script>
-   <script src="../js/theme.js"></script>
+  <script src="../js/header.js"></script>
+  <script src="../js/homepage.js"></script>
+  <script src="../js/theme.js"></script>
 
 </body>
 </html>

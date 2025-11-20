@@ -26,7 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
       <img src="../images/logo.png" alt="Logo PetShop">
       <h1>PetShop</h1>
     </div>
-    <nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-menu" id="nav-menu">
       <ul>
         <li><a href="./index.html">Accueil</a></li>
         <li><a href="./chiens.html">Chiens</a></li>
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <li><a href="./panier.html" class="cart-icon">🛒 Panier (<span id="cart-count">0</span>)</a></li>
          <li>
 <button id="theme-toggle" class="glow-toggle">
-    <span class="icon"></span></button></li>>
+    <span class="icon"></span></button></li>
       </ul>
     </nav>
   </header>
