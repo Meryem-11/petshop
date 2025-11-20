@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetShop - Your pet’s favorite place</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo PetShop">
+      <h1>PetShop</h1>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-menu" id="nav-menu">
+      <ul>
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="./chiens.html">Chiens</a></li>
+        <li><a href="./chats.html">Chats</a></li>
+        <li><a href="./oiseaux.html">Oiseaux</a></li>
+        <li><a href="./poissons.html">Poissons</a></li>
+        <li><a href="./rongeurs.html">Rongeurs</a></li>
+        <li><a href="./apropos.html">À propos</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./login.html" class="btn-login">Connexion</a></li>
+        <li><a href="./panier.html" class="cart-icon">🛒 Panier (<span id="cart-count">0</span>)</a></li>
+        <li>
+<button id="theme-toggle" class="glow-toggle">
+    <span class="icon"></span></button></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BANNIÈRE PRINCIPALE -->
+  <section class="banner">
+    <div class="banner-content">
+      <h2>Your pet’s favorite place </h2>
+      <p>Trouvez tout ce dont votre compagnon a besoin — nourriture, jouets, soins et plus encore !</p>
+      <a href="chiens.html" class="btn-primary"><span>Découvrir nos produits</span></a>
+    </div>
+  </section>
+
+  <!-- CATÉGORIES D’ANIMAUX -->
+  <section class="categories">
+    <h2>Nos catégories</h2>
+    <div class="category-grid">
+      <a href="chiens.html" class="category-card">
+        <img src="../images/chien.png" alt="Chiens">
+        <h3>Chiens</h3>
+      </a>
+      <a href="chats.html" class="category-card">
+        <img src="../images/chat.png" alt="Chats">
+        <h3>Chats</h3>
+      </a>
+      <a href="oiseaux.html" class="category-card">
+        <img src="../images/oiseau.png" alt="Oiseaux">
+        <h3>Oiseaux</h3>
+      </a>
+      <a href="poissons.html" class="category-card">
+        <img src="../images/poisson.png" alt="Poissons">
+        <h3>Poissons</h3>
+      </a>
+      <a href="rongeurs.html" class="category-card">
+        <img src="../images/hamster.png" alt="Rongeurs">
+        <h3>Rongeurs</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- STATISTIQUES -->
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-icon">🐾</div>
+        <div class="stat-number" data-target="10000">250</div>
+        <div class="stat-label">Clients satisfaits</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🛍️</div>
+        <div class="stat-number" data-target="5000">125</div>
+        <div class="stat-label">Produits disponibles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-number" data-target="4.9">4.8</div>
+        <div class="stat-label">Note moyenne</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🚚</div>
+        <div class="stat-number" data-target="24">24h/24h</div>
+        <div class="stat-label">Livraison</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI NOUS CHOISIR -->
+  <section class="why-choose-us">
+    <h2>Pourquoi choisir PetShop ?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <ion-icon name="shield-checkmark"></ion-icon>
+        </div>
+        <h3>Qualité garantie</h3>
+        <p>Tous nos produits sont sélectionnés avec soin et répondent aux normes de qualité les plus strictes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <ion-icon name="car-sport"></ion-icon>
+        </div>
+        <h3>Livraison rapide</h3>
+        <p>Livraison gratuite en 24h pour toutes vos commandes. Votre compagnon n'attendra pas longtemps !</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <ion-icon name="heart"></ion-icon>
+        </div>
+        <h3>Passion pour les animaux</h3>
+        <p>Notre équipe partage votre amour pour les animaux et vous conseille au mieux.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <ion-icon name="cash"></ion-icon>
+        </div>
+        <h3>Meilleurs prix</h3>
+        <p>Des prix compétitifs et des offres régulières pour prendre soin de votre budget.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <ion-icon name="headset"></ion-icon>
+        </div>
+        <h3>Support 24/7</h3>
+        <p>Notre équipe est disponible 24h/24 et 7j/7 pour répondre à toutes vos questions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <ion-icon name="leaf"></ion-icon>
+        </div>
+        <h3>Produits naturels</h3>
+        <p>Une large sélection de produits bio et naturels pour le bien-être de vos compagnons.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUITS POPULAIRES -->
+  <section class="popular-products">
+    <h2>Nos produits populaires</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-badge"> Best Seller</div>
+        <img src="../images/croquettes.png" alt="Croquettes pour chien">
+        <h3>Croquettes pour chien</h3>
+        <p>Nutritives et délicieuses, idéales pour le bien-être de votre chien.</p>
+        <div class="product-price">29,99 DH</div>
+        <button class="btn-secondary">Ajouter au panier</button>
+      </div>
+      <div class="product-card">
+        <div class="product-badge"> Nouveau</div>
+        <img src="../images/arbrechat.png" alt="Arbre à chat">
+        <h3>Arbre à chat</h3>
+        <p>Le coin parfait pour jouer tout en protégeant vos meubles.</p>
+        <div class="product-price">79,99 DH</div>
+        <button class="btn-secondary">Ajouter au panier</button>
+      </div>
+      <div class="product-card">
+        <div class="product-badge"> Éco-friendly</div>
+        <img src="../images/jouetoiseau.png" alt="Jouet pour oiseau">
+        <h3>Jouet pour oiseau</h3>
+        <p>Coloré et amusant, parfait pour garder vos oiseaux actifs et heureux.</p>
+        <div class="product-price">15,99 DH</div>
+        <button class="btn-secondary">Ajouter au panier</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOTIONS -->
+  <section class="promotions-section">
+    <div class="promo-banner">
+      <div class="promo-content">
+        <h2>🎉 Offre spéciale du mois !</h2>
+        <p>Jusqu'à <span class="promo-percent">-30%</span> sur tous les produits pour chiens et chats</p>
+        <a href="chiens.html" class="btn-promo">Profiter de l'offre</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section class="testimonials-section">
+    <h2>Ce que disent nos clients</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Service exceptionnel ! Mes chats adorent leurs nouveaux jouets. Livraison rapide et produits de qualité."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👤</div>
+          <div class="author-info">
+            <div class="author-name">Oussama Khattou</div>
+            <div class="author-location">Meknes, Maroc</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Le meilleur petshop en ligne ! Les conseils de l'équipe m'ont beaucoup aidé pour choisir la nourriture de mon chien."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👤</div>
+          <div class="author-info">
+            <div class="author-name">Saad Jebbour</div>
+            <div class="author-location">Agadir, Maroc</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Des prix compétitifs et une livraison express. Mon hamster est ravi de sa nouvelle cage ! Je recommande vivement."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👤</div>
+          <div class="author-info">
+            <div class="author-name">Meriem Bammou</div>
+            <div class="author-location">Agadir, Maroc</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2> Restez informé !</h2>
+        <p>Recevez nos meilleures offres et conseils pour prendre soin de vos animaux</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
+          <input type="email" placeholder="Votre adresse e-mail" required>
+          <button type="submit" class="btn-newsletter">
+            <span>S'abonner</span>
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Produits</h4>
+        <ul>
+          <li><a href="./chiens.html">Chiens</a></li>
+          <li><a href="./chats.html">Chats</a></li>
+          <li><a href="./oiseaux.html">Oiseaux</a></li>
+          <li><a href="./poissons.html">Poissons</a></li>
+          <li><a href="./rongeurs.html">Rongeurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="./contact.html">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="./apropos.html">À propos</a></li>
+          <li><a href="#">Carrières</a></li>
+          <li><a href="./contact.html">Contactez-nous</a></li>
+        </ul>
+      </div>
+      <div class="footer-subscribe">
+        <h4>S'abonner</h4>
+        <form class="subscribe-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Adresse e-mail" required>
+          <button type="submit" class="subscribe-btn">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </form>
+        <p>Bonjour, nous sommes PetShop. Notre objectif est de fournir les meilleurs produits pour le bien-être de vos animaux de compagnie.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <img src="../images/logo.png" alt="Logo PetShop">
+        <h3>PetShop</h3>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Conditions</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </div>
+    </div>
+    <p class="copyright">© 2025 PetShop — Your pet's favorite place 🐾</p>
+  </footer>
+
+  <script src="../js/header.js" defer></script>
+  <script src="../js/card.js" defer></script>
+  <script src="../js/homepage.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+
+</body>
+</html>

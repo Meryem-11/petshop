@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - PetShop</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo PetShop">
+      <h1>PetShop</h1>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-menu" id="nav-menu">
+      <ul>
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="./chiens.html">Chiens</a></li>
+        <li><a href="./chats.html">Chats</a></li>
+        <li><a href="./oiseaux.html">Oiseaux</a></li>
+        <li><a href="./poissons.html">Poissons</a></li>
+        <li><a href="./rongeurs.html">Rongeurs</a></li>
+        <li><a href="./apropos.html">À propos</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./login.html" class="btn-login">Connexion</a></li>
+        <li><a href="./panier.html" class="cart-icon">🛒 Panier (<span id="cart-count">0</span>)</a></li>
+         <li>
+<button id="theme-toggle" class="glow-toggle">
+    <span class="icon"></span></button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECTION CONTACT -->
+  <section class="contact-section">
+    <h2>Contactez-nous</h2>
+    <p>Une question, une suggestion ou besoin d’aide ? Nous sommes là pour vous répondre 🐾</p>
+
+    <div class="contact-container">
+      <!-- FORMULAIRE -->
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="nom">Nom complet</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="exemple@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="sujet">Sujet</label>
+          <input type="text" id="sujet" name="sujet" placeholder="Sujet du message" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Envoyer</button>
+      </form>
+
+      <!-- INFORMATIONS DE CONTACT -->
+      <div class="contact-info">
+        <h3>Nos coordonnées</h3>
+
+        <div class="info-card">
+          <img src="../images/mail.png" alt="Email Icon">
+          <div>
+            <h4>Email</h4>
+            <p>contact@petshop.ma</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <img src="../images/telephone.png" alt="Phone Icon">
+          <div>
+            <h4>Téléphone</h4>
+            <p>+212 601-969352</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <img src="../images/carte.png" alt="Location Icon">
+          <div>
+            <h4>Adresse</h4>
+            <p>123 Hay Mohammadi, Agadir, Maroc</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <img src="../images/clock.png" alt="Horaires Icon">
+          <div>
+            <h4>Horaires</h4>
+            <p>Lundi – Vendredi : 9h00 – 18h00</p>
+            <p>Samedi : 9h00 – 13h00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Produits</h4>
+        <ul>
+          <li><a href="./chiens.html">Chiens</a></li>
+          <li><a href="./chats.html">Chats</a></li>
+          <li><a href="./oiseaux.html">Oiseaux</a></li>
+          <li><a href="./poissons.html">Poissons</a></li>
+          <li><a href="./rongeurs.html">Rongeurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="./contact.html">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="./apropos.html">À propos</a></li>
+          <li><a href="#">Carrières</a></li>
+          <li><a href="./contact.html">Contactez-nous</a></li>
+        </ul>
+      </div>
+      <div class="footer-subscribe">
+        <h4>S'abonner</h4>
+        <form class="subscribe-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Adresse e-mail" required>
+          <button type="submit" class="subscribe-btn">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </form>
+        <p>Bonjour, nous sommes PetShop. Notre objectif est de fournir les meilleurs produits pour le bien-être de vos animaux de compagnie.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <img src="../images/logo.png" alt="Logo PetShop">
+        <h3>PetShop</h3>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Conditions</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </div>
+    </div>
+    <p class="copyright">© 2025 PetShop — Your pet's favorite place 🐾</p>
+  </footer>
+
+  <script src="../js/header.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

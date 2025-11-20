@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetShop - À propos</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo PetShop">
+      <h1>PetShop</h1>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav-menu" id="nav-menu">
+      <ul>
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="./chiens.html">Chiens</a></li>
+        <li><a href="./chats.html">Chats</a></li>
+        <li><a href="./oiseaux.html">Oiseaux</a></li>
+        <li><a href="./poissons.html">Poissons</a></li>
+        <li><a href="./rongeurs.html">Rongeurs</a></li>
+        <li><a href="./apropos.html">À propos</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./login.html" class="btn-login">Connexion</a></li>
+        <li><a href="./panier.html" class="cart-icon">🛒 Panier (<span id="cart-count">0</span>)</a></li>
+         <li>
+<button id="theme-toggle" class="glow-toggle">
+    <span class="icon"></span></button></li>
+      </ul>
+    </nav>
+  </header>
+
+<main class="about-page-container">
+<!--SECTION :NOTRE MISSION-->
+ <section class="about-hero">
+    <div class="about-hero-text">
+        <h1>Notre Mission : Le Bonheur de vos Compagnons</h1>    
+        <p>
+            Bienvenue chez <strong>PetShop</strong> ! Plus qu'une simple animalerie en ligne, 
+            nous sommes une équipe de passionnés dédiée au bien-être de vos compagnons.
+        </p>
+        <p>
+            Notre mission est de sélectionner les meilleurs produits pour garantir la santé 
+            et le bonheur de chaque animal au Maroc.
+        </p>
+    </div>
+    <div class="about-hero-image">
+        <img src="../images/animaux.jpg" alt="Nos compagnons (chiens, chats, oiseaux, rongeurs)">
+    </div>
+ </section>
+<!--SECTION :NOS ENGAGEMENT-->
+ <section class="about-section engagements">
+        <h2>Nos Engagements</h2>
+        
+        <div class="about-grid">
+
+            <div class="about-card">
+                <h3>🐾 Qualité Garantie</h3>
+                <p>
+                    Nous testons et sélectionnons uniquement des marques reconnues pour leur 
+                    qualité et le respect du bien-être animal.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>🚚 Livraison Rapide</h3>
+                <p>
+                    Nous savons que votre animal ne peut pas attendre. C'est pourquoi nous 
+                    livrons partout au Maroc dans les plus brefs délais.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>💬 Service Client</h3>
+                <p>
+                    Une question ? Un conseil ? Notre équipe est disponible pour vous aider 
+                    à choisir le meilleur pour votre compagnon.
+                </p>
+            </div>
+
+        </div>
+ </section>
+<!--SECTION :NOTRE HISTOIRE-->
+ <section class="about-section story">
+        <h2>Notre Histoire</h2>
+        <div class="story_content">
+            <p>
+                L'aventure <strong>PetShop</strong> est née d'une passion partagée et d'un constat 
+                simple : la difficulté à trouver des produits de qualité et des conseils 
+                fiables sur une seule plateforme au Maroc.
+            </p>
+            <p>
+                Nous avons donc décidé d'unir nos compétences pour créer la boutique en ligne 
+                que nous rêvions d'avoir en tant que propriétaires d'animaux.
+            </p>
+            <p>
+                <strong>PetShop</strong> n'est pas seulement un magasin. C'est le résultat de 
+                notre mission : offrir un 'guichet unique' simple et fiable pour tous 
+                les passionnés d'animaux.
+            </p>
+        </div>
+  </section>
+
+</main>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Produits</h4>
+        <ul>
+          <li><a href="./chiens.html">Chiens</a></li>
+          <li><a href="./chats.html">Chats</a></li>
+          <li><a href="./oiseaux.html">Oiseaux</a></li>
+          <li><a href="./poissons.html">Poissons</a></li>
+          <li><a href="./rongeurs.html">Rongeurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="./contact.html">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="./apropos.html">À propos</a></li>
+          <li><a href="#">Carrières</a></li>
+          <li><a href="./contact.html">Contactez-nous</a></li>
+        </ul>
+      </div>
+      <div class="footer-subscribe">
+        <h4>S'abonner</h4>
+        <form class="subscribe-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Adresse e-mail" required>
+          <button type="submit" class="subscribe-btn">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </form>
+        <p>Bonjour, nous sommes PetShop. Notre objectif est de fournir les meilleurs produits pour le bien-être de vos animaux de compagnie.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <img src="../images/logo.png" alt="Logo PetShop">
+        <h3>PetShop</h3>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Conditions</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </div>
+    </div>
+    <p class="copyright">© 2025 PetShop — Your pet's favorite place 🐾</p>
+  </footer>
+  <script src="../js/header.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>
