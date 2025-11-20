@@ -2354,131 +2354,816 @@ body {
   }
 }
 
+
 /* RESPONSIVE */
-@media (max-width: 900px) {
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .login-container {
-    padding: 30px 20px;
-  }
+/* --- Laptops et Écrans Moyens (max-width: 1366px) --- */
+@media screen and (max-width: 1366px) {
 
-  .form-options {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 30px;
+    }
 
-  .footer-content {
-    flex-direction: column;
-  }
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
 
-  .footer-column {
-    min-width: 100%;
-    margin-bottom: 30px;
-  }
+    .logo h1 {
+        font-size: 1.6rem;
+        white-space: nowrap;
+        margin-right: 20px;
+    }
 
-  .footer-subscribe {
-    max-width: 100%;
-  }
+    nav {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
 
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+    }
 
-  .footer-legal {
-    justify-content: center;
-  }
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
 
-  .footer-social {
-    justify-content: center;
-  }
+    .header-buttons,
+    .btn-login,
+    .cart-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 10px;
+    }
 
-  /* Responsive pour les nouvelles sections */
-  .banner h2 {
-    font-size: 2.2rem;
-  }
+    .btn-login {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
 
-  .banner p {
-    font-size: 1.1rem;
-  }
+    .cart-icon {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+}
+/* ===== MODE SOMBRE ===== */
 
-  .stats-container {
-    gap: 20px;
-  }
-
-  .stat-card {
-    min-width: 150px;
-    padding: 30px 20px;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  .newsletter-form input,
-  .btn-newsletter {
-    width: 100%;
-  }
-
-  .promo-banner {
-    padding: 40px 20px;
-  }
-
-  .promo-banner h2 {
-    font-size: 1.8rem;
-  }
-
-  .promo-banner p {
-    font-size: 1.1rem;
-  }
-
-  .why-choose-us h2,
-  .testimonials-section h2,
-  .popular-products h2,
-  .categories h2 {
-    font-size: 2rem;
-  }
-
-  /* Navigation responsive */
-  header {
-    padding: 15px 20px;
-    flex-wrap: wrap;
-  }
-
-  nav ul {
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-
-  .banner-content {
-    padding: 30px 20px;
-  }
+ HEAD
+body.dark-mode {
+  background-color: #000 !important;
+  color: #e6e6e6 !important;
 }
 
+
+/* ANNULER TOUS LES GRADIENTS VERTS */
+body.dark-mode section,
+body.dark-mode .section-header,
+body.dark-mode .categories-section,
+body.dark-mode .features-section,
+body.dark-mode .stats-section,
+body.dark-mode .petshop-banner,
+body.dark-mode .about-section,
+body.dark-mode .services-section,
+body.dark-mode .pricing-section,
+body.dark-mode .green-bg,
+body.dark-mode .gradient-bg {
+  background: #000 !important;  /* Noir */
+  background-color: #000 !important;
+}
+
+/* Cartes gris foncé */
+body.dark-mode .category-card,
+body.dark-mode .product-card,
+body.dark-mode .stat-card,
+body.dark-mode .feature-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+}
+
+/* HEADER / FOOTER */
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #000 !important;
+}
+
+/* Boutons */
+body.dark-mode button,
+body.dark-mode .btn-primary,
+body.dark-mode .btn-secondary {
+  background-color: #111 !important;
+  color: #fff !important;
+}
+/* Ne pas toucher aux images en mode sombre */
+body.dark-mode img {
+  background-color: unset !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+body.dark-mode .banner {
+  background: url("../images/banner1.jpg") center center/cover no-repeat !important;
+  color: #f2f2f2 !important;
+}
+
+/* MODE SOMBRE – BANNIÈRE */
+body.dark-mode .banner {
+    position: relative;
+    color: #fff !important;
+}
+
+/* Overlay foncé par-dessus l'image */
+body.dark-mode .banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* assombrit l’image */
+    z-index: 1;
+}
+
+/* Texte au-dessus de l'overlay */
+body.dark-mode .banner * {
+    position: relative;
+    z-index: 2;
+    color: #fff !important;
+}
+/* Dog section en mode sombre */
+body.dark-mode .dog-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+/* Dog card en mode sombre */
+/* Dog card en mode sombre */
+body.dark-mode .dog-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .dog-card h1,
+body.dark-mode .dog-card h2,
+body.dark-mode .dog-card h3,
+body.dark-mode .dog-card h4,
+body.dark-mode .dog-card h5,
+body.dark-mode .dog-card h6,
+body.dark-mode .dog-card p,
+body.dark-mode .dog-card span,
+body.dark-mode .dog-card a,
+body.dark-mode .dog-card li {
+  color: #fff !important;
+}
+
+/* Cat section en mode sombre */
+body.dark-mode .cat-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+
+body.dark-mode .cat-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .cat-card h1,
+body.dark-mode .cat-card h2,
+body.dark-mode .cat-card h3,
+body.dark-mode .cat-card h4,
+body.dark-mode .cat-card h5,
+body.dark-mode .cat-card h6,
+body.dark-mode .cat-card p,
+body.dark-mode .cat-card span,
+body.dark-mode .cat-card a,
+body.dark-mode .cat-card li {
+  color: #fff !important;
+}
+
+
+/* bird section en mode sombre */
+body.dark-mode .bird-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+
+body.dark-mode .bird-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .bird-card h1,
+body.dark-mode .bird-card h2,
+body.dark-mode .bird-card h3,
+body.dark-mode .bird-card h4,
+body.dark-mode .bird-card h5,
+body.dark-mode .bird-card h6,
+body.dark-mode .bird-card p,
+body.dark-mode .bird-card span,
+body.dark-mode .bird-card a,
+body.dark-mode .bird-card li {
+  color: #fff !important;
+}
+
+/* fish section en mode sombre */
+body.dark-mode .fish-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+
+body.dark-mode .fish-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .fish-card h1,
+body.dark-mode .fish-card h2,
+body.dark-mode .fish-card h3,
+body.dark-mode .fish-card h4,
+body.dark-mode .fish-card h5,
+body.dark-mode .fish-card h6,
+body.dark-mode .fish-card p,
+body.dark-mode .fish-card span,
+body.dark-mode .fish-card a,
+body.dark-mode .fish-card li {
+  color: #fff !important;
+}
+
+/* rodent section en mode sombre */
+body.dark-mode .rodent-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+
+body.dark-mode .rodent-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .rodent-card h1,
+body.dark-mode .rodent-card h2,
+body.dark-mode .rodent-card h3,
+body.dark-mode .rodent-card h4,
+body.dark-mode .rodent-card h5,
+body.dark-mode .rodent-card h6,
+body.dark-mode .rodent-card p,
+body.dark-mode .rodent-card span,
+body.dark-mode .rodent-card a,
+body.dark-mode .rodent-card li {
+  color: #fff !important;
+}
+
+/* Footer en mode sombre */
+body.dark-mode footer {
+  background: #000 !important;          /* Fond noir */
+  background-color: #000 !important;    /* Sécurité */
+  color: #e6e6e6 !important;            /* Texte clair */
+}
+/* ===== CONTACT — Mode sombre ===== */
+
+body.dark-mode .contact-section {
+  background-color: #000 !important;
+  color: #e6e6e6 !important;
+}
+
+/* Titres et paragraphes */
+body.dark-mode .contact-section h2,
+body.dark-mode .contact-section p,
+body.dark-mode .contact-section h3 {
+  color: #fff !important;
+}
+
+/* Conteneur du formulaire */
+body.dark-mode .contact-form {
+  background-color: #1b1b1b !important;
+  color: #fff !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important;
+}
+
+/* Labels */
+body.dark-mode .contact-form label {
+  color: #e6e6e6 !important;
+}
+
+/* Inputs & textarea */
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background-color: #111 !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
+}
+
+/* Placeholder en mode sombre */
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+  color: #aaa !important;
+}
+
+/* Bouton */
+body.dark-mode .contact-form .btn-primary {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .contact-form .btn-primary:hover {
+  background-color: #555 !important;
+}
+
+/* Contact info bloc */
+body.dark-mode .contact-info {
+  color: #fff !important;
+}
+
+body.dark-mode .contact-info h3 {
+  color: #fff !important;
+}
+
+/* ===== INFO CARD — Mode sombre ===== */
+
+body.dark-mode .info-card {
+  background-color: #1c1c1c !important;      /* Fond sombre */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important;
+}
+
+body.dark-mode .info-card h4 {
+  color: #ff9a3c !important;  /* Orange clair visible en sombre */
+}
+
+body.dark-mode .info-card p {
+  color: #e6e6e6 !important;
+}
+
+/* Image : ne pas la modifier, garder couleurs réelles */
+body.dark-mode .info-card img {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* ========================= */
+/*        MODE SOMBRE        */
+/*       PAGE - PANIER       */
+/* ========================= */
+
+/* Conteneur principal du panier */
+body.dark-mode .cart {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6) !important;
+}
+
+/* Titre du panier */
+body.dark-mode .cart h1 {
+  background: none !important;   /* Enlever le dégradé texte */
+  -webkit-text-fill-color: #fff !important;
+  color: #fff !important;
+}
+
+/* Icône du panier */
+body.dark-mode .cart img[alt="ton panier"] {
+  filter: none !important;
+}
+
+/* Liste des articles */
+body.dark-mode #cart-list li {
+  background-color: #1c1c1c !important;
+  border-left-color: #555 !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+  color: #fff !important;
+}
+
+body.dark-mode #cart-list li:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7) !important;
+  border-left-color: #999 !important;
+}
+
+/* Image des articles */
+body.dark-mode #cart-list li img {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+}
+
+/* Total */
+body.dark-mode .cart p {
+  background: #222 !important;
+  color: #fff !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important;
+}
+
+/* Bouton supprimer */
+body.dark-mode .remove-btn {
+  background: #333 !important;
+  color: #fff !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5) !important;
+}
+
+body.dark-mode .remove-btn:hover {
+  background: #555 !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.7) !important;
+}
+/* ===================================== */
+/*         MODE SOMBRE — PAGE LOGIN      */
+/* ===================================== */
+
+/* SECTION */
+body.dark-mode .login-section {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* CONTAINER */
+body.dark-mode .login-container {
+  background-color: #1c1c1c !important;
+  color: #fff !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* TITRE */
+body.dark-mode .login-container h2 {
+  color: #fff !important;
+}
+
+/* PARAGRAPHES */
+body.dark-mode .login-container > p,
+body.dark-mode .signup-link,
+body.dark-mode .remember-me,
+body.dark-mode .login-form label {
+  color: #ddd !important;
+}
+
+/* LIENS */
+body.dark-mode .signup-link a,
+body.dark-mode .forgot-password {
+  color: #8BC34A !important;
+}
+
+body.dark-mode .signup-link a:hover,
+body.dark-mode .forgot-password:hover {
+  color: #FF9800 !important;
+}
+
+/* ICONES INPUT */
+body.dark-mode .input-icon {
+  color: #8BC34A !important;
+}
+
+body.dark-mode .input-wrapper:focus-within .input-icon {
+  color: #FF9800 !important;
+}
+
+/* INPUTS */
+body.dark-mode .login-form input[type="email"],
+body.dark-mode .login-form input[type="password"] {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+
+body.dark-mode .login-form input[type="email"]:focus,
+body.dark-mode .login-form input[type="password"]:focus {
+  border-color: #8BC34A !important;
+}
+
+/* CHECKBOX */
+body.dark-mode .remember-me input[type="checkbox"] {
+  accent-color: #8BC34A !important;
+}
+
+/* BOUTON LOGIN */
+body.dark-mode .login-form .btn-primary {
+  background-color: #4CAF50 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .login-form .btn-primary:hover {
+  background-color: #388E3C !important;
+}
+
+/* ERREURS & SUCCESS */
+body.dark-mode .error-message {
+  color: #ff6b6b !important;
+}
+
+body.dark-mode .login-form input.error {
+  background-color: #442222 !important;
+  border-color: #ff6b6b !important;
+}
+
+body.dark-mode .success-message {
+  background-color: #2e7d32 !important;
+  color: #fff !important;
+}
+/* ============================== */
+/*       MODE SOMBRE - A PROPOS   */
+/* ============================== */
+
+/* FOND DE PAGE */
+body.dark-mode {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* HERO SECTION */
+body.dark-mode .about-hero-text h1 {
+  color: #fff !important;
+}
+
+body.dark-mode .about-hero-text p {
+  color: #ddd !important;
+}
+
+/* IMAGE */
+body.dark-mode .about-hero-image img {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.08) !important;
+}
+
+/* SECTION */
+body.dark-mode .about-section {
+  background-color: #000 !important;
+}
+
+body.dark-mode .about-section h2 {
+  color: #fff !important;
+}
+
+/* GRID & CARDS */
+body.dark-mode .about-card {
+  background-color: #1a1a1a !important;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-mode .about-card h3 {
+  color: #fff !important;
+}
+
+body.dark-mode .about-card p {
+  color: #ccc !important;
+}
+
+/* STORY SECTION */
+body.dark-mode .story_content p {
+  color: #ddd !important;
+}
+/* MODE SOMBRE — BACKGROUND GLOBAL */
+body.dark-mode {
+  background: #000 !important;       /* Fond noir */
+  color: #e6e6e6 !important;         /* Texte clair */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Bouton général */
+.glow-toggle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #8BC34A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* Icône par défaut (Light Mode = Soleil) */
+.glow-toggle .icon {
+  font-size: 22px;
+  transition: color 0.4s, text-shadow 0.4s, transform 0.4s;
+  color: #f1c40f;
+  text-shadow: 0 0 10px rgba(255, 196, 0, 0.6);
+}
+
+/* Mode sombre */
+body.dark-mode .glow-toggle {
+  background: #8BC34A;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+}
+
+/* Icône en mode sombre (Lune Glow bleu) */
+body.dark-mode .glow-toggle .icon {
+  color: #73c7ff;
+  text-shadow: 0 0 15px rgba(0, 150, 255, 0.8);
+  transform: rotate(20deg);
+}
+
+/* Animation au clic */
+.glow-toggle:active .icon {
+  transform: scale(0.9);
+}
+
+/* RESPONSIVE */
+
+/* --- Laptops et Écrans Moyens (max-width: 1366px) --- */
+@media screen and (max-width: 1366px) {
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 30px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo h1 {
+        font-size: 1.6rem;
+        white-space: nowrap;
+        margin-right: 20px;
+    }
+
+    nav {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .header-buttons,
+    .btn-login,
+    .cart-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 10px;
+    }
+
+    .btn-login {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .cart-icon {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+}
+
+
+
+/* --- Mobiles et Tablettes Mode Portrait (max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header-buttons {
+        margin-top: 15px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .banner h2 {
+        font-size: 2.2rem;
+    }
+
+    .banner p {
+        font-size: 1.1rem;
+    }
+
+    .btn-primary {
+        padding: 12px 30px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .categories,
+    .popular-products,
+    .stats-section,
+    .why-choose-us,
+    .promotions-section,
+    .testimonials-section {
+        padding: 50px 20px;
+    }
+
+    h2 {
+        font-size: 2.2rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .btn-newsletter {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+
+/* --- Petits Mobiles (max-width: 480px) --- */
+@media screen and (max-width: 480px) {
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .banner h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-card {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .product-grid {
+        gap: 20px;
+    }
+
+    .stat-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .promo-banner {
+        padding: 30px 20px;
+    }
+
+    .promo-banner h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-promo {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
