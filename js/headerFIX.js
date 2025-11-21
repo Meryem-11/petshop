@@ -1,6 +1,7 @@
 function loadHeader() {
     const headerHTML = `
     <header>
+ 
         <div class="logo">
             <img src="../images/logo.png" alt="Logo PetShop">
             <h1>PetShop</h1>

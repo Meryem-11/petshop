@@ -1,0 +1,102 @@
+
+
+
+/* --- Conteneur du panier --- */
+.cart {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #fff3e0 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(139, 195, 74, 0.15);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Titre du panier */
+.cart h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 30px 0;
+    font-size: 2.2rem;
+    color: var(--color-text-dark);
+    background: linear-gradient(135deg, var(--color-green-primary) 0%, var(--color-orange-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cart img[alt="ton panier"] {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 15px;
+    filter: drop-shadow(0 2px 4px rgba(139, 195, 74, 0.3));
+}
+
+/* Liste des articles */
+#cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+#cart-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid var(--color-green-primary);
+    box-shadow: 0 4px 15px rgba(139, 195, 74, 0.1);
+    transition: all 0.3s ease;
+}
+
+#cart-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 195, 74, 0.2);
+    border-left-color: var(--color-orange-primary);
+}
+
+#cart-list li img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Total */
+.cart p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: right;
+    margin: 30px 20px 20px 0;
+    padding: 20px 20px;
+    background: linear-gradient(135deg, var(--color-green-primary) 0%, var(--color-green-dark) 100%);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(139, 195, 74, 0.25);
+}
+
+/* Bouton supprimer */
+.remove-btn {
+    background: linear-gradient(135deg, var(--color-orange-primary) 0%, var(--color-orange-light) 100%);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 152, 0, 0.2);
+}
+
+.remove-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+    background: linear-gradient(135deg, var(--color-orange-dark) 0%, var(--color-orange-primary) 100%);
+}
+
+
+
