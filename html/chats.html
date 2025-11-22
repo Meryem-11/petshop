@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PetShop - Chiens</title>
-  <link rel="stylesheet" href="../css/style.css">
+  
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/modesombre.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -20,30 +23,16 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <img src="../images/logo.png" alt="Logo PetShop">
-      <h1>PetShop</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Accueil</a></li>
-        <li><a href="./chiens.html">Chiens</a></li>
-        <li><a href="./chats.html">Chats</a></li>
-        <li><a href="./oiseaux.html">Oiseaux</a></li>
-        <li><a href="./poissons.html">Poissons</a></li>
-        <li><a href="./rongeurs.html">Rongeurs</a></li>
-        <li><a href="./apropos.html">À propos</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./login.html" class="btn-login">Connexion</a></li>
-        <li><a href="./panier.html" class="cart-icon">🛒 Panier (<span id="cart-count">0</span>)</a></li>
-        <li>
-<button id="theme-toggle" class="glow-toggle">
-    <span class="icon"></span></button></li>
-      </ul>
-    </nav>
-  </header>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cartCountSpan = document.getElementById('cart-count');
+    if (!cartCountSpan) return;
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCountSpan.textContent = cart.length;
+});
+</script>
   <!-- SECTION : CROQUETTES -->
   <section class="cat-section">
   <h2>🐟 Croquettes </h2>
@@ -279,72 +268,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   </div>
 </section>
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-column">
-        <h4>Produits</h4>
-        <ul>
-          <li><a href="./chiens.html">Chiens</a></li>
-          <li><a href="./chats.html">Chats</a></li>
-          <li><a href="./oiseaux.html">Oiseaux</a></li>
-          <li><a href="./poissons.html">Poissons</a></li>
-          <li><a href="./rongeurs.html">Rongeurs</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Informations</h4>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="./contact.html">Support</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Entreprise</h4>
-        <ul>
-          <li><a href="./apropos.html">À propos</a></li>
-          <li><a href="#">Carrières</a></li>
-          <li><a href="./contact.html">Contactez-nous</a></li>
-        </ul>
-      </div>
-      <div class="footer-subscribe">
-        <h4>S'abonner</h4>
-        <form class="subscribe-form" onsubmit="event.preventDefault();">
-          <input type="email" placeholder="Adresse e-mail" required>
-          <button type="submit" class="subscribe-btn">
-            <ion-icon name="arrow-forward"></ion-icon>
-          </button>
-        </form>
-        <p>Bonjour, nous sommes PetShop. Notre objectif est de fournir les meilleurs produits pour le bien-être de vos animaux de compagnie.</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-logo">
-        <img src="../images/logo.png" alt="Logo PetShop">
-        <h3>PetShop</h3>
-      </div>
-      <div class="footer-legal">
-        <a href="#">Conditions</a>
-        <a href="#">Confidentialité</a>
-        <a href="#">Cookies</a>
-      </div>
-      <div class="footer-social">
-        <a href="#" class="social-icon" aria-label="LinkedIn">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a>
-        <a href="#" class="social-icon" aria-label="Facebook">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <a href="#" class="social-icon" aria-label="Twitter">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a>
-      </div>
-    </div>
-    <p class="copyright">© 2025 PetShop — Your pet's favorite place 🐾</p>
-  </footer>
-  <script src="../js/card.js"></script>
-  <script src="../js/header.js"></script>
-   <script src="../js/theme.js"></script>
+<script src="../js/headerFIX.js"></script> <!-- header chargé d'abord -->
+<script src="../js/card.js" defer></script>
+<script src="../js/footerFIX.js" defer></script>
+<script src="../js/theme.js" defer></script>
 </body>
 </html>

@@ -1,74 +1,51 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".cat-btn, .dog-btn, .bird-btn, .fish-btn, .rodent-btn");
+document.addEventListener("DOMContentLoaded", function() {
 
-  buttons.forEach(button => {
-    button.addEventListener("click", function () {
-      const card = this.closest(".cat-card, .dog-card, .bird-card, .fish-card, .rodent-card");
-      if (!card) return;
+    // Sélectionner les boutons après que le header et le DOM soient prêts
+    const buttons = document.querySelectorAll(".cat-btn");
+    const cartCountSpan = document.getElementById('cart-count');
 
-      const product = {
-        name: card.getAttribute("data-name"),
-        price: parseFloat(card.getAttribute("data-price")) || 0,
-        image: card.querySelector("img") ? card.querySelector("img").src : ""
-      };
+    console.log("Nombre de boutons trouvés :", buttons.length);
+    console.log("Cart count span :", cartCountSpan);
 
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart.push(product);
-      localStorage.setItem("cart", JSON.stringify(cart));
+    // Charger le panier depuis le localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cartCountSpan) cartCountSpan.textContent = cart.length;
 
-      updateCart();
-      updateCartCount();
-      alert(product.name + " a été ajouté au panier !");
+    // Ajouter l'événement click à chaque bouton
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+            console.log("Bouton cliqué !");
+
+            const card = this.closest(".cat-card");
+            if (!card) {
+                console.log("Impossible de trouver la carte !");
+                return;
+            }
+
+            const product = {
+                name: card.dataset.name,
+                price: parseFloat(card.dataset.price),
+                quantity: 1,
+                image: card.querySelector('img') ? card.querySelector('img').src : ''
+            };
+
+            // Vérifier si le produit est déjà dans le panier
+            const existingIndex = cart.findIndex(item => item.name === product.name);
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push(product);
+            }
+
+           console.log("Avant sauvegarde :", cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+console.log("Après sauvegarde :", JSON.parse(localStorage.getItem('cart')));
+
+
+            // Mettre à jour le compteur
+            if (cartCountSpan) cartCountSpan.textContent = cart.length;
+
+            alert(`${product.name} a été ajouté au panier !`);
+        });
     });
-  });
-
-  function updateCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartList = document.getElementById("cart-list");
-    const cartTotal = document.getElementById("cart-total");
-    if (!cartList || !cartTotal) return;
-
-    cartList.innerHTML = "";
-    let total = 0;
-
-    cart.forEach(item => {
-      const li = document.createElement("li");
-      li.style.display = "flex";
-      li.style.alignItems = "center";
-      li.style.gap = "10px";
-
-      // Image
-      const img = document.createElement("img");
-      img.src = item.image;
-      img.alt = item.name;
-      img.style.width = "50px";
-      img.style.height = "50px";
-      img.style.objectFit = "cover";
-      img.style.borderRadius = "5px";
-
-      // Texte
-      const span = document.createElement("span");
-      span.textContent = `${item.name} - ${item.price} DH`;
-      span.style.flex = "1";
-
-      li.appendChild(img);
-      li.appendChild(span);
-      cartList.appendChild(li);
-
-      total += item.price;
-    });
-
-    cartTotal.textContent = total;
-  }
-
-  function updateCartCount() {
-    const cartCountSpan = document.getElementById("cart-count");
-    if (!cartCountSpan) return;
-
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cartCountSpan.textContent = cart.length;
-  }
-
-  updateCart();
-  updateCartCount();
 });
