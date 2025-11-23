@@ -1,0 +1,891 @@
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Très grands écrans (1920px et plus) */
+@media (min-width: 1920px) {
+  header {
+    padding: 15px 5% !important;
+  }
+  
+  .product-grid,
+  .dog-grid,
+  .cat-grid,
+  .bird-grid,
+  .fish-grid,
+  .rodent-grid {
+    max-width: 1800px;
+  }
+  
+  .product-card,
+  .dog-card,
+  .cat-card,
+  .bird-card,
+  .fish-card,
+  .rodent-card {
+    width: calc(20% - 24px); /* 5 produits par ligne */
+    min-width: 280px;
+  }
+  
+  .banner h2 {
+    font-size: 4rem;
+  }
+  
+  .categories h2,
+  .popular-products h2,
+  .why-choose-us h2,
+  .testimonials-section h2,
+  .dog-section h2,
+  .cat-section h2,
+  .bird-section h2,
+  .fish-section h2,
+  .rodent-section h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Grands écrans (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  header {
+    padding: 15px 4% !important;
+  }
+  
+  .product-grid,
+  .dog-grid,
+  .cat-grid,
+  .bird-grid,
+  .fish-grid,
+  .rodent-grid {
+    max-width: 1400px;
+  }
+  
+  .product-card,
+  .dog-card,
+  .cat-card,
+  .bird-card,
+  .fish-card,
+  .rodent-card {
+    width: calc(20% - 24px); /* 5 produits par ligne */
+    min-width: 250px;
+  }
+}
+
+/* Écrans moyens-larges (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  header {
+    padding: 15px 3% !important;
+  }
+  
+  nav ul {
+    gap: 15px !important;
+  }
+  
+  nav a {
+    font-size: 0.95rem !important;
+    padding: 9px 14px !important;
+  }
+  
+  .product-card,
+  .dog-card,
+  .cat-card,
+  .bird-card,
+  .fish-card,
+  .rodent-card {
+    width: calc(20% - 24px); /* 5 produits par ligne */
+    min-width: 210px;
+  }
+  
+  .banner h2 {
+    font-size: 3rem;
+  }
+  
+  .banner p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Écrans moyens (992px - 1199px) - 4 produits par ligne */
+@media (min-width: 992px) and (max-width: 1199px) {
+  header {
+    padding: 15px 3% !important;
+  }
+  
+  nav ul {
+    gap: 12px !important;
+  }
+  
+  nav a {
+    font-size: 0.9rem !important;
+    padding: 8px 12px !important;
+  }
+  
+  .logo h1 {
+    font-size: 1.4rem !important;
+  }
+  
+  .logo img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .btn-login {
+    padding: 8px 14px !important;
+  }
+  
+  .product-card,
+  .dog-card,
+  .cat-card,
+  .bird-card,
+  .fish-card,
+  .rodent-card {
+    width: calc(25% - 22.5px); /* 4 produits par ligne */
+  }
+  
+  .banner {
+    min-height: 500px;
+    padding: 100px 20px;
+  }
+  
+  .banner h2 {
+    font-size: 2.5rem;
+  }
+  
+  .banner p {
+    font-size: 1.1rem;
+  }
+  
+  .categories h2,
+  .popular-products h2,
+  .why-choose-us h2,
+  .testimonials-section h2,
+  .dog-section h2,
+  .cat-section h2,
+  .bird-section h2,
+  .fish-section h2,
+  .rodent-section h2 {
+    font-size: 2.3rem;
+  }
+}
+
+/* Tablettes (768px - 991px) - 3 produits par ligne */
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    padding: 12px 2% !important;
+  }
+  
+  nav ul {
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    justify-content: center;
+  }
+  
+  nav a {
+    font-size: 0.85rem !important;
+    padding: 7px 11px !important;
+  }
+  
+  .logo h1 {
+    font-size: 1.3rem !important;
+  }
+  
+  .logo img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .btn-login {
+    padding: 7px 12px !important;
+    font-size: 0.85rem;
+  }
+  
+  .cart-icon {
+    padding: 7px 12px !important;
+    font-size: 0.85rem;
+  }
+  
+  .product-card,
+  .dog-card,
+  .cat-card,
+  .bird-card,
+  .fish-card,
+  .rodent-card {
+    width: calc(33.333% - 20px); /* 3 produits par ligne */
+  }
+  
+  .category-card {
+    width: calc(33.333% - 23px);
+    min-width: 170px;
+  }
+  
+  .banner {
+    min-height: 450px;
+    padding: 80px 20px;
+  }
+  
+  .banner h2 {
+    font-size: 2.2rem;
+  }
+  
+  .banner p {
+    font-size: 1rem;
+  }
+  
+  .banner-content {
+    padding: 40px 30px;
+  }
+  
+  .categories h2,
+  .popular-products h2,
+  .why-choose-us h2,
+  .testimonials-section h2,
+  .dog-section h2,
+  .cat-section h2,
+  .bird-section h2,
+  .fish-section h2,
+  .rodent-section h2 {
+    font-size: 2rem;
+  }
+  
+  .stats-section,
+  .categories,
+  .popular-products,
+  .why-choose-us,
+  .testimonials-section,
+  .dog-section,
+  .cat-section,
+  .bird-section,
+  .fish-section,
+  .rodent-section {
+    padding: 60px 20px;
+  }
+  
+  .promo-banner {
+    padding: 50px 30px;
+  }
+  
+  .promo-banner h2 {
+    font-size: 2rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .btn-newsletter {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  footer {
+    padding: 50px 30px 25px;
+  }
+}
+
+/* Petites tablettes et grands mobiles (576px - 767px) - 2 produits par ligne */
+@media (min-width: 576px) and (max-width: 767px) {
+  header {
+    padding: 12px 2% !important;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .logo {
+    order: 1;
+  }
+  
+  nav {
+    order: 3;
+    width: 100%;
+  }
+  
+  nav ul {
+    flex-wrap: wrap !important;
+    justify-content: center;
+    gap: 8px !important;
+  }
+  
+  nav a {
+    font-size: 0.85rem !important;
+    padding: 7px 12px !important;
+  }
+  
+  .logo h1 {
+    font-size: 1.2rem !important;
+  }
+  
+  .logo img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  
+  .btn-login,
+  .cart-icon {
+    padding: 7px 12px !important;
+    font-size: 0.85rem;
+  }
+  
+  .product-card,
+  .dog-card,
+  .cat-card,
+  .bird-card,
+  .fish-card,
+  .rodent-card {
+    width: calc(50% - 15px); /* 2 produits par ligne */
+  }
+  
+  .category-card {
+    width: calc(50% - 17.5px);
+    min-width: 160px;
+  }
+  
+  .banner {
+    min-height: 400px;
+    padding: 60px 15px;
+  }
+  
+  .banner h2 {
+    font-size: 1.8rem;
+  }
+  
+  .banner p {
+    font-size: 0.95rem;
+  }
+  
+  .banner-content {
+    padding: 30px 25px;
+  }
+  
+  .btn-primary {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+  
+  .categories h2,
+  .popular-products h2,
+  .why-choose-us h2,
+  .testimonials-section h2,
+  .dog-section h2,
+  .cat-section h2,
+  .bird-section h2,
+  .fish-section h2,
+  .rodent-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .stats-section,
+  .categories,
+  .popular-products,
+  .why-choose-us,
+  .testimonials-section,
+  .dog-section,
+  .cat-section,
+  .bird-section,
+  .fish-section,
+  .rodent-section {
+    padding: 50px 15px;
+  }
+  
+  .stat-card {
+    min-width: calc(50% - 20px);
+  }
+  
+  .features-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .promo-banner {
+    padding: 40px 25px;
+  }
+  
+  .promo-banner h2 {
+    font-size: 1.8rem;
+  }
+  
+  .promo-banner p {
+    font-size: 1.1rem;
+  }
+  
+  .newsletter-section {
+    padding: 60px 15px;
+  }
+  
+  .newsletter-content h2 {
+    font-size: 2rem;
+  }
+  
+  .newsletter-content p {
+    font-size: 1rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-content {
+    gap: 30px;
+  }
+  
+  .footer-column {
+    min-width: calc(50% - 15px);
+  }
+  
+  .footer-subscribe {
+    max-width: 100%;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Mobiles (moins de 576px) - 1 produit par ligne */
+@media (max-width: 575px) {
+  header {
+    padding: 12px 3% !important;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  nav ul {
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100%;
+  }
+  
+  nav a {
+    font-size: 0.9rem !important;
+    padding: 10px 15px !important;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .logo {
+    justify-content: center;
+  }
+  
+  .logo h1 {
+    font-size: 1.2rem !important;
+  }
+  
+  .logo img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  
+  .btn-login,
+  .cart-icon {
+    padding: 10px 15px !important;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .product-card,
+  .dog-card,
+  .cat-card,
+  .bird-card,
+  .fish-card,
+  .rodent-card {
+    width: 100%; /* 1 produit par ligne */
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .category-card {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .product-grid,
+  .dog-grid,
+  .cat-grid,
+  .bird-grid,
+  .fish-grid,
+  .rodent-grid,
+  .category-grid {
+    gap: 20px;
+  }
+  
+  .banner {
+    min-height: 350px;
+    padding: 50px 15px;
+  }
+  
+  .banner h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .banner p {
+    font-size: 0.9rem;
+    margin: 15px 0 20px;
+  }
+  
+  .banner-content {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+  
+  .btn-primary {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+  
+  .categories h2,
+  .popular-products h2,
+  .why-choose-us h2,
+  .testimonials-section h2,
+  .dog-section h2,
+  .cat-section h2,
+  .bird-section h2,
+  .fish-section h2,
+  .rodent-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+  
+  .stats-section,
+  .categories,
+  .popular-products,
+  .why-choose-us,
+  .testimonials-section,
+  .dog-section,
+  .cat-section,
+  .bird-section,
+  .fish-section,
+  .rodent-section {
+    padding: 40px 15px;
+  }
+  
+  .stat-card {
+    width: 100%;
+    padding: 30px 20px;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .stat-icon {
+    font-size: 2.5rem;
+  }
+  
+  .features-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    padding: 30px 20px;
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .promo-banner {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+  
+  .promo-banner h2 {
+    font-size: 1.5rem;
+  }
+  
+  .promo-banner p {
+    font-size: 1rem;
+  }
+  
+  .promo-percent {
+    font-size: 1.5rem;
+  }
+  
+  .btn-promo {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+  
+  .newsletter-section {
+    padding: 50px 15px;
+  }
+  
+  .newsletter-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .newsletter-content p {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .newsletter-form input {
+    padding: 15px 20px;
+  }
+  
+  .btn-newsletter {
+    padding: 15px 30px;
+    justify-content: center;
+  }
+  
+  footer {
+    padding: 35px 15px 20px;
+  }
+  
+  .footer-content {
+    gap: 25px;
+  }
+  
+  .footer-column {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer-column h4 {
+    font-size: 1rem;
+  }
+  
+  .footer-subscribe {
+    max-width: 100%;
+    padding: 25px;
+  }
+  
+  .subscribe-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .subscribe-btn {
+    width: 100%;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .copyright {
+    font-size: 0.85rem;
+  }
+}
+
+/* Correctif pour les écrans entre 1200px et 1920px - Maintenir 5 produits */
+@media (min-width: 1200px) {
+  .product-card,
+  .dog-card,
+  .cat-card,
+  .bird-card,
+  .fish-card,
+  .rodent-card {
+    width: calc(20% - 24px) !important; /* Force 5 produits par ligne */
+  }
+}
+
+/* ====== UTILITAIRES GLOBAUX ====== */
+html,
+body {
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ====== AJUSTEMENTS COMPOSANTS - 576px à 767px ====== */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Login */
+  .login-container {
+    max-width: 520px;
+    padding: 28px;
+    border-radius: 12px;
+  }
+  .form-options {
+    gap: 8px;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 50px 18px;
+  }
+  .contact-container {
+    gap: 18px;
+  }
+  .info-card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Panier */
+  .cart {
+    padding: 28px;
+  }
+  #cart-list li {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  #cart-list li img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  /* A propos */
+  .about-hero {
+    gap: 24px;
+  }
+  .about-grid {
+    gap: 18px;
+  }
+}
+
+/* ====== AJUSTEMENTS COMPOSANTS - <= 575px (mobile) ====== */
+@media (max-width: 575px) {
+  /* Login */
+  .login-section {
+    padding: 40px 15px;
+    min-height: auto;
+  }
+  .login-container {
+    padding: 24px;
+    border-radius: 12px;
+  }
+  .login-container h2 {
+    font-size: 1.6rem;
+  }
+  .login-container > p {
+    font-size: 0.95rem;
+  }
+  .form-options {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .login-form .btn-primary {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Signup */
+  .signup-section {
+    padding: 40px 15px;
+    min-height: auto;
+  }
+  .signup-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+  .signup-container h2 {
+    font-size: 1.6rem;
+  }
+  .signup-container p {
+    font-size: 0.95rem;
+  }
+  .signup-form .btn-primary {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 40px 15px;
+  }
+  .contact-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact-form,
+  .contact-info {
+    flex: 1 1 100%;
+  }
+  .info-card {
+    align-items: flex-start;
+  }
+  .info-card img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+  }
+
+  /* Panier */
+  .cart {
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .cart h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  #cart-list li {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px !important;
+  }
+  #cart-list li img {
+    width: 72px !important;
+    height: 72px !important;
+  }
+  #cart-list li span {
+    font-size: 0.95rem;
+  }
+  .remove-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .cart p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 20px 0 0 0;
+  }
+
+  /* A propos */
+  .about-hero {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-hero-text {
+    min-width: 0;
+  }
+  .about-hero-text h1 {
+    font-size: 1.5rem;
+  }
+  .about-hero-text p {
+    font-size: 1rem;
+  }
+  .about-grid {
+    flex-direction: column;
+  }
+  .about-card {
+    padding: 16px;
+  }
+  .story_content {
+    padding: 0 5px;
+  }
+}
