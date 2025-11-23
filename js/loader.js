@@ -49,14 +49,25 @@
 
   // If video becomes ready, show it (if gif wasn't shown)
   if (videoEl) {
-    // if video can play through or starts playing, treat as ready
+    // Start loading video immediately
+    try {
+      videoEl.load();
+    } catch (e) {}
+    
+    // Use multiple events for faster display - canplay is faster than canplaythrough
     var onVideoReady = function () {
       // only show video if GIF is not visible
       if (!gifEl || gifEl.style.display === 'none') showContent('video');
+      // Remove all listeners to prevent multiple calls
+      videoEl.removeEventListener('canplay', onVideoReady);
       videoEl.removeEventListener('canplaythrough', onVideoReady);
+      videoEl.removeEventListener('loadeddata', onVideoReady);
       videoEl.removeEventListener('playing', onVideoReady);
     };
-    videoEl.addEventListener('canplaythrough', onVideoReady);
+    // Listen to multiple events for faster response
+    videoEl.addEventListener('loadeddata', onVideoReady); // Fires when first frame is loaded
+    videoEl.addEventListener('canplay', onVideoReady); // Fires when enough data is loaded to play
+    videoEl.addEventListener('canplaythrough', onVideoReady); // Fallback for slower connections
     videoEl.addEventListener('playing', onVideoReady);
     // ensure placeholder shows if neither gif nor video yet
     if ((!gifEl || gifEl.style.display === 'none') && placeholder) placeholder.style.display = 'block';

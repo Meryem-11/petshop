@@ -164,6 +164,15 @@ body.dark-mode .loader-icon {
   margin: 0 auto;
 }
 
+/* GIF fallback / preferred GIF styling */
+.loader-gif {
+  width: 280px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
 /* Ensure loader-content is centered */
 .page-loader .loader-content { gap: 4px; }
 
