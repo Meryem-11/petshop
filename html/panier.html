@@ -8,230 +8,78 @@
   <link rel="stylesheet" href="../css/modesombre.css">
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/panier.css">
-  <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
  <script src="../js/headerFIX.js" defer></script>
   <div class="cart">
   <img src="../images/cart.png" alt="ton panier">
   <h1>Votre panier</h1>
-  <div class="cart-layout">
-    <div class="cart-main">
-      <ul id="cart-list"></ul>
-    </div>
-    <aside class="cart-summary">
-      <div class="summary-card">
-        <h3>Résumé</h3>
-        <div class="row"><span>Sous-total</span><span id="summary-subtotal">0 DH</span></div>
-        <div class="promo">
-          <input id="promo-code" type="text" placeholder="Code promo (PET10, FREESHIP)">
-          <button id="apply-promo" type="button">Appliquer</button>
-        </div>
-        <div class="row"><span>Réduction</span><span id="summary-discount">-0 DH</span></div>
-        <div class="row"><span>Livraison</span><span id="summary-shipping">20 DH</span></div>
-        <div class="row total"><span>Total</span><span id="summary-total">0 DH</span></div>
-        <button class="checkout-btn" type="button">Procéder au paiement</button>
-        <div class="summary-actions">
-          <a href="./index.html" class="btn-secondary">Continuer mes achats</a>
-          <button id="clear-cart" class="btn-danger" type="button">Vider le panier</button>
-        </div>
-      </div>
-    </aside>
-  </div>
+  <ul id="cart-list"></ul>
+  <p>Total : <span id="total">0</span> DH</p>
   </div>
 
   <script>
-    const cartList = document.getElementById('cart-list');
-    const summarySubtotal = document.getElementById('summary-subtotal');
-    const summaryDiscount = document.getElementById('summary-discount');
-    const summaryShipping = document.getElementById('summary-shipping');
-    const summaryTotal = document.getElementById('summary-total');
-    const promoInput = document.getElementById('promo-code');
-    const applyPromoBtn = document.getElementById('apply-promo');
+const cartList = document.getElementById('cart-list');
+const totalSpan = document.getElementById('total');
 
-    function getCartSafe() {
-      try {
-        const data = JSON.parse(localStorage.getItem('cart')) || [];
-        return Array.isArray(data) ? data : [];
-      } catch (_) {
-        return [];
-      }
-    }
+function displayCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartList.innerHTML = '';
+    let total = 0;
 
-    function displayCart() {
-      const cart = getCartSafe();
-      cartList.innerHTML = '';
-
-      // Group items by name (fallback to image)
-      const map = new Map();
-      cart.forEach(it => {
-        const key = (it && (it.name || it.image)) || '';
-        if (!map.has(key)) map.set(key, { name: it.name || 'Article', image: it.image || '', price: Number(it.price) || 0, qty: 0 });
-        map.get(key).qty += 1;
-      });
-      const groups = Array.from(map.values());
-
-      if (!groups.length) {
+    cart.forEach((item, index) => {
         const li = document.createElement('li');
-        li.style.justifyContent = 'center';
-        li.style.color = '#666';
-        li.textContent = 'Votre panier est vide.';
-        cartList.appendChild(li);
-      } else {
-        groups.forEach(g => {
-          const li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.alignItems = 'center';
+        li.style.gap = '10px';
 
-          const img = document.createElement('img');
-          img.src = g.image;
-          img.alt = g.name;
-          img.style.width = '90px';
-          img.style.height = '90px';
-          img.style.objectFit = 'cover';
-          img.style.borderRadius = '5px';
+        // Image du produit
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = item.name;
+        img.style.width = '90px';
+        img.style.height = '90px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '5px';
 
-          const infoWrap = document.createElement('div');
-          infoWrap.className = 'item-info';
+        // Nom + prix
+        const span = document.createElement('span');
+        span.textContent = `${item.name} - ${item.price} DH`;
+        span.style.flex = '1';
 
-          const titleSpan = document.createElement('span');
-          titleSpan.className = 'item-title';
-          titleSpan.textContent = g.name;
-
-          const priceSpan = document.createElement('span');
-          priceSpan.className = 'price-badge';
-          priceSpan.textContent = g.price.toFixed(2) + ' DH';
-
-          const controls = document.createElement('div');
-          controls.className = 'qty-controls';
-          const decBtn = document.createElement('button');
-          decBtn.className = 'qty-btn';
-          decBtn.setAttribute('data-action', 'dec');
-          decBtn.setAttribute('data-name', g.name);
-          decBtn.textContent = '-';
-          const qtySpan = document.createElement('span');
-          qtySpan.className = 'qty';
-          qtySpan.textContent = String(g.qty);
-          const incBtn = document.createElement('button');
-          incBtn.className = 'qty-btn';
-          incBtn.setAttribute('data-action', 'inc');
-          incBtn.setAttribute('data-name', g.name);
-          incBtn.textContent = '+';
-
-          const lineTotal = document.createElement('span');
-          lineTotal.className = 'line-total';
-          lineTotal.textContent = (g.price * g.qty).toFixed(2) + ' DH';
-
-          controls.appendChild(decBtn);
-          controls.appendChild(qtySpan);
-          controls.appendChild(incBtn);
-
-          infoWrap.appendChild(titleSpan);
-          infoWrap.appendChild(priceSpan);
-          infoWrap.appendChild(controls);
-          infoWrap.appendChild(lineTotal);
-
-          const removeBtn = document.createElement('button');
-          removeBtn.textContent = 'Supprimer';
-          removeBtn.className = 'remove-btn';
-          removeBtn.setAttribute('data-name', g.name);
-
-          li.appendChild(img);
-          li.appendChild(infoWrap);
-          li.appendChild(removeBtn);
-          cartList.appendChild(li);
+        // Bouton supprimer
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Supprimer';
+        removeBtn.className = 'remove-btn';
+        removeBtn.addEventListener('click', () => {
+            removeFromCart(index);
         });
-      }
 
-      // Compute totals with promo codes
-      const subtotal = groups.reduce((s, g) => s + (g.price * g.qty), 0);
-      let discount = 0;
-      let shipping = subtotal >= 300 ? 0 : 20;
-      const code = ((localStorage.getItem('promoCode') || '')).toUpperCase().trim();
-      if (promoInput && !promoInput.value) promoInput.value = code;
-      if (code === 'PET10') discount += subtotal * 0.10;
-      if (code === 'FREESHIP') shipping = 0;
+        li.appendChild(img);
+        li.appendChild(span);
+        li.appendChild(removeBtn);
+        cartList.appendChild(li);
 
-      if (summarySubtotal) summarySubtotal.textContent = subtotal.toFixed(2) + ' DH';
-      if (summaryDiscount) summaryDiscount.textContent = '-' + discount.toFixed(2) + ' DH';
-      if (summaryShipping) summaryShipping.textContent = shipping.toFixed(2) + ' DH';
-      if (summaryTotal) summaryTotal.textContent = (subtotal - discount + shipping).toFixed(2) + ' DH';
-
-      // Header + mini-cart sync
-      if (window.updateCartCount) window.updateCartCount();
-      const cartCountSpan = document.getElementById('cart-count');
-      if (cartCountSpan) cartCountSpan.textContent = cart.length;
-      if (window.refreshMiniCart) window.refreshMiniCart();
-    }
-
-    function removeFromCart(index) {
-      const cart = getCartSafe();
-      cart.splice(index, 1);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      displayCart();
-    }
-
-    // Initial render
-    displayCart();
-
-    // Quantity and remove (delegated)
-    cartList.addEventListener('click', (e) => {
-      const qtyBtn = e.target.closest('.qty-btn');
-      const removeBtn = e.target.closest('.remove-btn');
-      if (!qtyBtn && !removeBtn) return;
-
-      let cart = getCartSafe();
-      if (qtyBtn) {
-        const act = qtyBtn.getAttribute('data-action');
-        const name = qtyBtn.getAttribute('data-name') || '';
-        if (!name) return;
-        if (act === 'inc') {
-          const sample = cart.find(it => (it.name || '') === name);
-          if (sample) cart.push({ name: sample.name, price: sample.price, image: sample.image });
-        } else if (act === 'dec') {
-          const idx = cart.findIndex(it => (it.name || '') === name);
-          if (idx > -1) cart.splice(idx, 1);
-        }
-      } else if (removeBtn) {
-        const name = removeBtn.getAttribute('data-name') || '';
-        if (name) cart = cart.filter(it => (it.name || '') !== name);
-      }
-      localStorage.setItem('cart', JSON.stringify(cart));
-      displayCart();
-      if (window.updateCartCount) window.updateCartCount();
-      if (window.refreshMiniCart) window.refreshMiniCart();
+        total += item.price;
     });
 
-    // Clear button
-    const clearBtn = document.getElementById('clear-cart');
-    if (clearBtn) {
-      clearBtn.addEventListener('click', () => {
-        localStorage.setItem('cart', JSON.stringify([]));
-        localStorage.removeItem('promoCode');
-        displayCart();
-        if (window.updateCartCount) window.updateCartCount();
-        if (window.refreshMiniCart) window.refreshMiniCart();
-      });
-    }
+    totalSpan.textContent = total.toFixed(2);
 
-    // Promo apply
-    if (applyPromoBtn) {
-      applyPromoBtn.addEventListener('click', () => {
-        const code = (promoInput.value || '').toUpperCase().trim();
-        if (code === 'PET10' || code === 'FREESHIP') {
-          localStorage.setItem('promoCode', code);
-          if (window.showToast) window.showToast('Code appliqué: ' + code, 'success');
-        } else {
-          localStorage.removeItem('promoCode');
-          if (window.showToast) window.showToast('Code invalide (utilisez PET10 ou FREESHIP)', 'error');
-        }
-        displayCart();
-      });
-    }
+    // Mettre à jour le compteur dans l'header
+    const cartCountSpan = document.getElementById('cart-count');
+    if (cartCountSpan) cartCountSpan.textContent = cart.length;
+}
 
-    // Update if cart or promo changes from other pages/tabs
-    window.addEventListener('storage', (e) => {
-      if (e.key === 'cart' || e.key === 'promoCode') displayCart();
-    });
-  </script>
+// Fonction pour supprimer un article du panier
+function removeFromCart(index) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1); // supprime l'article à l'index donné
+    localStorage.setItem('cart', JSON.stringify(cart)); // sauvegarde
+    displayCart(); // réaffiche le panier
+}
+
+displayCart();
+</script>
 <script src="../js/footerFIX.js" defer></script>
 <script src="../js/theme.js"></script>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PetShop - Chats</title>
+  <title>PetShop - Chiens</title>
   
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/responsive.css">
@@ -23,32 +23,16 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <body>
-<script src="../js/headerFIX.js" defer></script>
-  <!-- PLP Toolbar -->
-  <div class="plp-toolbar">
-    <div class="field">
-      <label for="plp-q">Rechercher</label>
-      <input id="plp-q" type="search" placeholder="Produit...">
-    </div>
-    <div class="field">
-      <label for="plp-min">Min</label>
-      <input id="plp-min" type="number" min="0" inputmode="numeric" placeholder="0">
-    </div>
-    <div class="field">
-      <label for="plp-max">Max</label>
-      <input id="plp-max" type="number" min="0" inputmode="numeric" placeholder="500">
-    </div>
-    <div class="field">
-      <label for="plp-sort">Trier</label>
-      <select id="plp-sort">
-        <option value="relevance">Pertinence</option>
-        <option value="price-asc">Prix ▲</option>
-        <option value="price-desc">Prix ▼</option>
-        <option value="name-asc">Nom A–Z</option>
-      </select>
-    </div>
-    <button class="btn-clear" id="plp-clear" type="button">Réinitialiser</button>
-  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cartCountSpan = document.getElementById('cart-count');
+    if (!cartCountSpan) return;
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCountSpan.textContent = cart.length;
+});
+</script>
   <!-- SECTION : CROQUETTES -->
   <section class="cat-section">
   <h2>🐟 Croquettes </h2>
@@ -284,11 +268,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   </div>
 </section>
-  <script src="../js/footerFIX.js" defer></script>
-  <script src="../js/card.js"></script>
-  <script src="../js/header.js"></script>
-  <script src="../js/plp.js" defer></script>
-  <script src="../js/theme.js"></script>
-  
+<script src="../js/headerFIX.js"></script> <!-- header chargé d'abord -->
+<script src="../js/card.js" defer></script>
+<script src="../js/footerFIX.js" defer></script>
+<script src="../js/theme.js" defer></script>
 </body>
 </html>

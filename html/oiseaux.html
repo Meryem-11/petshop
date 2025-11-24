@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PetShop - Oiseaux</title>
+  <title>PetShop - Chiens</title>
 <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/modesombre.css">
   <link rel="stylesheet" href="../css/responsive.css">
@@ -23,37 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
 <body>
   <!-- HEADER -->
 <script src="../js/headerFIX.js" defer></script>
-  <!-- PLP Toolbar -->
-  <div class="plp-toolbar">
-    <div class="field">
-      <label for="plp-q">Rechercher</label>
-      <input id="plp-q" type="search" placeholder="Produit...">
-    </div>
-    <div class="field">
-      <label for="plp-min">Min</label>
-      <input id="plp-min" type="number" min="0" inputmode="numeric" placeholder="0">
-    </div>
-    <div class="field">
-      <label for="plp-max">Max</label>
-      <input id="plp-max" type="number" min="0" inputmode="numeric" placeholder="500">
-    </div>
-    <div class="field">
-      <label for="plp-sort">Trier</label>
-      <select id="plp-sort">
-        <option value="relevance">Pertinence</option>
-        <option value="price-asc">Prix ▲</option>
-        <option value="price-desc">Prix ▼</option>
-        <option value="name-asc">Nom A–Z</option>
-      </select>
-    </div>
-    <button class="btn-clear" id="plp-clear" type="button">Réinitialiser</button>
-  </div>
   <!-- SECTION : NOURRITURE -->
 <section class="bird-section">
   <h2>🌾 Nourriture</h2>
   <div class="bird-grid">
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Mélange Premium" data-price="189">
       <img src="../images/prembird.jpg" alt="Mélange premium pour oiseaux">
       <h3>Mélange Premium</h3>
       <p>Mix complet de graines, fruits secs et vitamines pour la vitalité quotidienne.</p>
@@ -61,35 +36,35 @@ document.addEventListener("DOMContentLoaded", function() {
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Graines pour Canaris" data-price="149">
       <img src="../images/canaris.jpg" alt="Graines pour canaris">
       <h3>Graines pour Canaris</h3>
       <p>Mélange spécifique pour canaris, riche en alpiste pour un chant clair et puissant.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 149 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Pâtée aux œufs" data-price="119">
       <img src="../images/egg food.jpg" alt="Pâtée aux œufs">
       <h3>Pâtée aux œufs</h3>
       <p>Pâtée fortifiante pour la période de reproduction et la croissance des oisillons.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 119 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Mélange pour Perruches" data-price="99">
       <img src="../images/perrouches.jpg" alt="Mélange pour perruches">
       <h3>Mélange pour Perruches</h3>
       <p>Mélange équilibré de millet et d'avoine, adapté aux besoins des becs crochus.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 99 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Bâtonnets de friandises" data-price="179">
       <img src="../images/prestige.jpg" alt="Bâtonnets de friandises">
       <h3>Bâtonnets de friandises</h3>
       <p>Friandises au miel et aux fruits à accrocher, pour stimuler et régaler vos oiseaux.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 179 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
@@ -100,43 +75,43 @@ document.addEventListener("DOMContentLoaded", function() {
   <h2>🦜 Jouets</h2>
   <div class="bird-grid">
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Balançoire en bois" data-price="159">
       <img src="../images/balancoire.jpg" alt="Balançoire en bois">
       <h3>Balançoire en bois</h3>
       <p>Un classique pour se balancer et s'amuser. Stimule l'équilibre de l'oiseau.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 159 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Échelle à grimper" data-price="149">
       <img src="../images/echelle.webp" alt="Échelle à grimper">
       <h3>Échelle à grimper</h3>
       <p>Parfaite pour l'exercice physique. S'accroche facilement à toutes les cages.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 149 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Balles avec clochette" data-price="119">
       <img src="../images/balle bird.jpg" alt="Balles avec clochette">
       <h3>Balles avec clochette</h3>
       <p>Légères et sonores, idéales pour stimuler le jeu au sol ou dans la cage.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 119 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Miroir avec perchoir" data-price="199">
       <img src="../images/mirroir.jpg" alt="Miroir avec perchoir">
       <h3>Miroir avec perchoir</h3>
       <p>Pour combattre l'ennui et offrir un compagnon de jeu à votre oiseau.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 199 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Jouet à déchiqueter" data-price="139">
       <img src="../images/dechiqueteur.jpg" alt="Jouet à déchiqueter">
       <h3>Jouet à déchiqueter</h3>
       <p>En fibres naturelles, satisfait l'instinct de picorage et d'exploration.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 139 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
@@ -147,43 +122,43 @@ document.addEventListener("DOMContentLoaded", function() {
   <h2>🧼 Soins & Hygiène</h2>
   <div class="bird-grid">
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Spray soin du plumage" data-price="159">
       <img src="../images/spray bird.jpg" alt="Spray soin du plumage">
       <h3>Spray soin du plumage</h3>
       <p>Lotion tonique pour un plumage brillant et sain. Apaise la peau.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 159 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Sable anisé" data-price="209">
       <img src="../images/sable anise.jpg" alt="Sable de fond de cage">
       <h3>Sable anisé</h3>
       <p>Fond de cage absorbant et hygiénique. Aide à la digestion (grit).</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 209 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Baignoire externe" data-price="169">
       <img src="../images/baignoire.jpg" alt="Baignoire pour oiseaux">
       <h3>Baignoire externe</h3>
       <p>Indispensable pour que l'oiseau nettoie ses plumes. Se fixe à la cage.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 169 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Os de seiche" data-price="99">
       <img src="../images/bird os.jpg" alt="Os de seiche">
       <h3>Os de seiche</h3>
       <p>Source naturelle de calcium pour l'entretien du bec et la force des os.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 99 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Traitement anti-poux" data-price="199">
       <img src="../images/treatment.jpg" alt="Traitement anti-parasites">
       <h3>Traitement anti-poux</h3>
       <p>Protège efficacement votre oiseau contre les poux rouges et autres parasites.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 199 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
@@ -194,43 +169,43 @@ document.addEventListener("DOMContentLoaded", function() {
   <h2>🏠 Cages & Nids</h2>
   <div class="bird-grid">
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Cage standard" data-price="139">
       <img src="../images/cage.jpg" alt="Cage standard">
       <h3>Cage standard</h3>
       <p>Cage spacieuse pour le confort quotidien, avec perchoirs et mangeoires inclus.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 139 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Grande volière" data-price="229">
       <img src="../images/voliere.jpg" alt="Grande volière">
       <h3>Grande volière</h3>
       <p>Une grande volière intérieure pour offrir plus d'espace de vol à vos oiseaux.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 229 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Nid douillet" data-price="169">
       <img src="../images/nid.jpg" alt="Nid douillet">
       <h3>Nid douillet</h3>
       <p>Nid en fibres naturelles pour la couvaison ou simplement pour se reposer.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 169 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Couvre-cage" data-price="249">
       <img src="../images/couvre.jpg" alt="Couvre-cage">
       <h3>Couvre-cage</h3>
       <p>Couverture pour cage, aide à calmer les oiseaux et favorise le sommeil.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 249 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Perchoir chauffant" data-price="139">
       <img src="../images/chauffant.jpg" alt="Perchoir chauffant">
       <h3>Perchoir chauffant</h3>
       <p>Perchoir thérapeutique qui garde votre oiseau au chaud en hiver.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 139 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
@@ -241,31 +216,31 @@ document.addEventListener("DOMContentLoaded", function() {
   <h2>✈️ Harnais & Transport</h2>
   <div class="bird-grid">
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Harnais & Laisse" data-price="189">
       <img src="../images/harnbird.jpg" alt="Harnais pour oiseau">
       <h3>Harnais & Laisse</h3>
       <p>Pour les promenades en extérieur en toute sécurité. Ajustable et confortable.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 189 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Sac à dos (Bulle)" data-price="219">
       <img src="../images/sac br.jpg" alt="Sac à dos bulle pour oiseau">
       <h3>Sac à dos (Bulle)</h3>
       <p>Sac de transport panoramique pour que votre oiseau voie le monde.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 219 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Cage de transport" data-price="149">
       <img src="../images/cage tr.jpg" alt="Cage de transport">
       <h3>Cage de transport</h3>
       <p>Pour les visites chez le vétérinaire. Solide, sécurisée et bien ventilée.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 149 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-    <div class="bird-card">
+    <div class="bird-card"data-name="Perchoir de fenêtre" data-price="89">
       <img src="../images/perch.jpg" alt="Perchoir de fenêtre">
       <h3>Perchoir de fenêtre</h3>
       <p>Avec ventouses, pour que votre oiseau profite de la vue avec vous.</p>
@@ -273,11 +248,11 @@ document.addEventListener("DOMContentLoaded", function() {
       <button class="bird-btn">Ajouter au panier</button>
     </div>
 
-      <div class="bird-card">
+      <div class="bird-card"data-name="Étiquette de transport" data-price="69">
       <img src="../images/ethiqu.jpg" alt="Étiquette d'identification pour cage">
       <h3>Étiquette de transport</h3>
       <p>Étiquette d'identification à attacher à la cage de transport. Essentiel en cas de perte.</p>
-      <p class="price">Prix : 89 DH</p>
+      <p class="price">Prix : 69 DH</p>
       <button class="bird-btn">Ajouter au panier</button>
     </div>
     
@@ -286,8 +261,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </section>
    <script src="../js/footerFIX.js" defer></script>
    <script src="../js/header.js"></script>
-   <script src="../js/card.js"></script>
-   <script src="../js/plp.js" defer></script>
    <script src="../js/theme.js"></script>
 </body>
 </html>

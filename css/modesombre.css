@@ -1,287 +1,617 @@
-/* ===== Dark Mode (Refined, Consistent, High-Contrast) ===== */
+/* ===== MODE SOMBRE ===== */
 
-/* Dark palette via variable overrides (scoped to dark-mode) */
+ HEAD
 body.dark-mode {
-  --color-bg-light: #0f172a;            /* Slate 900 */
-  --color-text-dark: #e2e8f0;           /* Slate 200 */
-  --color-text-light: #cbd5e1;          /* Slate 300 */
-  --color-text-secondary: #94a3b8;      /* Slate 400 */
-  --color-white: #0b1220;               /* Deep background */
-  --color-shadow: rgba(0, 0, 0, 0.6);
-
-  /* Accent adjustments (softer on dark) */
-  --color-green-primary: #10b981;       /* Emerald 500 */
-  --color-green-dark: #059669;          /* Emerald 600 */
-  --color-orange-primary: #f59e0b;      /* Amber 500 */
-  --color-orange-light: #f8b84e;        /* Softer amber */
-  --color-orange-dark: #d97706;         /* Amber 600 */
-
-  background: #0f172a !important;
-  color: var(--color-text-dark) !important;
+  background-color: #000 !important;
+  color: #e6e6e6 !important;
 }
 
-/* Theme toggle */
-#theme-toggle {
-  background-color: var(--color-green-dark);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px; height: 40px;
-  font-size: 18px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center; justify-content: center;
-  transition: background 0.2s ease;
-}
-#theme-toggle:hover { background-color: var(--color-green-primary); }
 
-/* Header / Footer */
-body.dark-mode header {
-  background: #0b1220 !important;
-  color: var(--color-text-dark) !important;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.4) !important;
-}
-body.dark-mode footer {
-  background: #0b1220 !important;
-  color: var(--color-text-dark) !important;
-}
-
-/* Navigation links in drawer + top bar */
-body.dark-mode nav a {
-  color: var(--color-text-dark) !important;
-  background: transparent !important;
-  text-shadow: none !important;
-}
-body.dark-mode #primary-nav a {
-  color: #e5e7eb !important;
-  background: #0f172a !important;
-  border: 1px solid rgba(255,255,255,0.06) !important;
-}
-body.dark-mode #primary-nav a:hover {
-  background: #111827 !important;
-}
-
-/* Cart icon chip */
-body.dark-mode .cart-icon {
-  background: rgba(255,255,255,0.08) !important;
-  color: #fff !important;
-}
-body.dark-mode #primary-nav .cart-icon {
-  background: #0f172a !important;
-  color: #e5e7eb !important;
-}
-body.dark-mode #primary-nav .cart-icon .cart-count {
-  background: var(--color-orange-primary) !important;
-  color: #111 !important;
-}
-
-/* Global sections (neutralize light gradients) */
-body.dark-mode .categories,
-body.dark-mode .popular-products,
-body.dark-mode .why-choose-us,
-body.dark-mode .testimonials-section,
-body.dark-mode .dog-section,
-body.dark-mode .cat-section,
-body.dark-mode .bird-section,
-body.dark-mode .fish-section,
-body.dark-mode .rodent-section,
+/* ANNULER TOUS LES GRADIENTS VERTS */
+body.dark-mode section,
+body.dark-mode .section-header,
+body.dark-mode .categories-section,
+body.dark-mode .features-section,
 body.dark-mode .stats-section,
-body.dark-mode .newsletter-section,
-body.dark-mode .promotions-section,
-body.dark-mode .contact-section,
-body.dark-mode .login-section,
+body.dark-mode .petshop-banner,
 body.dark-mode .about-section,
 body.dark-mode .services-section,
-body.dark-mode .pricing-section {
-  background: #0b1220 !important;
-  color: var(--color-text-dark) !important;
+body.dark-mode .pricing-section,
+body.dark-mode .green-bg,
+body.dark-mode .gradient-bg {
+  background: #000 !important;  /* Noir */
+  background-color: #000 !important;
 }
 
-/* Cards */
+/* Cartes gris foncé */
+body.dark-mode .category-card,
 body.dark-mode .product-card,
-body.dark-mode .dog-card,
-body.dark-mode .cat-card,
-body.dark-mode .bird-card,
-body.dark-mode .fish-card,
-body.dark-mode .rodent-card,
-body.dark-mode .feature-card,
 body.dark-mode .stat-card,
-body.dark-mode .info-card,
-body.dark-mode .login-container,
-body.dark-mode .contact-form {
-  background: #0f172a !important;              /* Panel background */
-  border: 1px solid rgba(255,255,255,0.06) !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
-  color: var(--color-text-dark) !important;
-}
-body.dark-mode .product-card p,
-body.dark-mode .dog-card p:not(.price),
-body.dark-mode .cat-card p:not(.price),
-body.dark-mode .bird-card p:not(.price),
-body.dark-mode .fish-card p:not(.price),
-body.dark-mode .rodent-card p:not(.price),
-body.dark-mode .feature-card p,
-body.dark-mode .stat-card p {
-  color: var(--color-text-secondary) !important;
+body.dark-mode .feature-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
 }
 
-/* Card pseudo highlights (softer) */
-body.dark-mode .product-card::after,
-body.dark-mode .dog-card::after,
-body.dark-mode .cat-card::after,
-body.dark-mode .bird-card::after,
-body.dark-mode .fish-card::after,
-body.dark-mode .rodent-card::after {
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%) !important;
+/* HEADER / FOOTER */
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #000 !important;
 }
 
-/* Price color stays vibrant */
-body.dark-mode .product-price,
-body.dark-mode .dog-card .price,
-body.dark-mode .cat-card .price,
-body.dark-mode .bird-card .price,
-body.dark-mode .fish-card .price,
-body.dark-mode .rodent-card .price {
-  color: var(--color-orange-light) !important;
-  -webkit-text-fill-color: initial !important;
-  background: none !important;
-  background-clip: initial !important;
-  -webkit-background-clip: initial !important;
+/* Boutons */
+body.dark-mode button,
+body.dark-mode .btn-primary,
+body.dark-mode .btn-secondary {
+  background-color: #111 !important;
+  color: #fff !important;
 }
-
-/* Buttons */
-body.dark-mode .btn-primary {
-  background: #f59e0b !important;
-  color: #111 !important;
+/* Ne pas toucher aux images en mode sombre */
+body.dark-mode img {
+  background-color: unset !important;
+  filter: none !important;
+  opacity: 1 !important;
 }
-body.dark-mode .btn-secondary,
-body.dark-mode .dog-btn,
-body.dark-mode .cat-btn,
-body.dark-mode .bird-btn,
-body.dark-mode .fish-btn,
-body.dark-mode .rodent-btn {
-  background: #059669 !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255,255,255,0.06) !important;
-}
-body.dark-mode .btn-secondary:hover,
-body.dark-mode .dog-btn:hover,
-body.dark-mode .cat-btn:hover,
-body.dark-mode .bird-btn:hover,
-body.dark-mode .fish-btn:hover,
-body.dark-mode .rodent-btn:hover {
-  filter: brightness(1.08);
-}
-
-/* Banner (reduce overlay strength; keep readable) */
 body.dark-mode .banner {
   background: url("../images/banner1.jpg") center center/cover no-repeat !important;
-  color: var(--color-text-dark) !important;
+  color: #f2f2f2 !important;
 }
+
+/* MODE SOMBRE – BANNIÈRE */
+body.dark-mode .banner {
+    position: relative;
+    color: #fff !important;
+}
+
+/* Overlay foncé par-dessus l'image */
 body.dark-mode .banner::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,0.30) !important;
-  z-index: 1;
-}
-body.dark-mode .banner-content {
-  position: relative; z-index: 2;
-  background: rgba(17,24,39,0.55) !important; /* #111827 */
-  color: var(--color-text-dark) !important;
-}
-
-/* Toasts, mini-cart, quick view */
-body.dark-mode .toast { background: #111827 !important; color: #e5e7eb !important; }
-body.dark-mode .toast.success { background: linear-gradient(135deg, var(--color-green-dark), var(--color-green-primary)) !important; }
-
-body.dark-mode .cart-overlay { background: rgba(0,0,0,0.6) !important; }
-body.dark-mode .mini-cart { background: #0f172a !important; color: #e5e7eb !important; }
-body.dark-mode .mini-cart header {
-  background: #0b1220 !important;
-  color: #e5e7eb !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-}
-body.dark-mode .mini-cart .close-cart { background: rgba(255,255,255,0.08) !important; color: #e5e7eb !important; }
-body.dark-mode .mini-cart-content { background: #0f172a !important; }
-body.dark-mode .mini-cart-item { border-color: rgba(255,255,255,0.06) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; }
-body.dark-mode .mini-cart-item .title { color: #e5e7eb !important; }
-body.dark-mode .mini-cart-item .price { color: var(--color-orange-primary) !important; }
-body.dark-mode .mini-cart-footer { background: #0f172a !important; border-top: 1px solid rgba(255,255,255,0.06) !important; }
-body.dark-mode .checkout-btn {
-  background: linear-gradient(135deg, var(--color-orange-primary), var(--color-orange-dark)) !important;
-  color: #111 !important;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* assombrit l’image */
+    z-index: 1;
 }
 
-body.dark-mode .quickview-overlay { background: rgba(0,0,0,0.6) !important; }
-body.dark-mode .quickview .qv-dialog { background: #0f172a !important; box-shadow: 0 30px 80px rgba(0,0,0,0.6) !important; }
-body.dark-mode .quickview .qv-title { color: #e5e7eb !important; }
-body.dark-mode .quickview .qv-desc { color: #cbd5e1 !important; }
-body.dark-mode .quickview .qv-close { background: rgba(255,255,255,0.08) !important; color: #e5e7eb !important; }
-body.dark-mode .quickview .qv-image { background: #111827 !important; }
+/* Texte au-dessus de l'overlay */
+body.dark-mode .banner * {
+    position: relative;
+    z-index: 2;
+    color: #fff !important;
+}
+/* Dog section en mode sombre */
+body.dark-mode .dog-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+/* Dog card en mode sombre */
+/* Dog card en mode sombre */
+body.dark-mode .dog-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
 
-/* Contact specifics */
-body.dark-mode .contact-info { color: #e5e7eb !important; }
-body.dark-mode .contact-form label { color: #cbd5e1 !important; }
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .dog-card h1,
+body.dark-mode .dog-card h2,
+body.dark-mode .dog-card h3,
+body.dark-mode .dog-card h4,
+body.dark-mode .dog-card h5,
+body.dark-mode .dog-card h6,
+body.dark-mode .dog-card p,
+body.dark-mode .dog-card span,
+body.dark-mode .dog-card a,
+body.dark-mode .dog-card li {
+  color: #fff !important;
+}
+
+/* Cat section en mode sombre */
+body.dark-mode .cat-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+
+body.dark-mode .cat-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .cat-card h1,
+body.dark-mode .cat-card h2,
+body.dark-mode .cat-card h3,
+body.dark-mode .cat-card h4,
+body.dark-mode .cat-card h5,
+body.dark-mode .cat-card h6,
+body.dark-mode .cat-card p,
+body.dark-mode .cat-card span,
+body.dark-mode .cat-card a,
+body.dark-mode .cat-card li {
+  color: #fff !important;
+}
+
+
+/* bird section en mode sombre */
+body.dark-mode .bird-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+
+body.dark-mode .bird-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .bird-card h1,
+body.dark-mode .bird-card h2,
+body.dark-mode .bird-card h3,
+body.dark-mode .bird-card h4,
+body.dark-mode .bird-card h5,
+body.dark-mode .bird-card h6,
+body.dark-mode .bird-card p,
+body.dark-mode .bird-card span,
+body.dark-mode .bird-card a,
+body.dark-mode .bird-card li {
+  color: #fff !important;
+}
+
+/* fish section en mode sombre */
+body.dark-mode .fish-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+
+body.dark-mode .fish-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .fish-card h1,
+body.dark-mode .fish-card h2,
+body.dark-mode .fish-card h3,
+body.dark-mode .fish-card h4,
+body.dark-mode .fish-card h5,
+body.dark-mode .fish-card h6,
+body.dark-mode .fish-card p,
+body.dark-mode .fish-card span,
+body.dark-mode .fish-card a,
+body.dark-mode .fish-card li {
+  color: #fff !important;
+}
+
+/* rodent section en mode sombre */
+body.dark-mode .rodent-section {
+  background: #000 !important;        /* Fond noir */
+  background-color: #000 !important;  /* Sécurité */
+  color: #e6e6e6 !important;          /* Texte clair */
+}
+
+body.dark-mode .rodent-card {
+  background-color: #1c1c1c !important;
+  border-color: #333 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;   /* Texte blanc */
+}
+
+/* Forcer tous les textes internes à devenir blancs */
+body.dark-mode .rodent-card h1,
+body.dark-mode .rodent-card h2,
+body.dark-mode .rodent-card h3,
+body.dark-mode .rodent-card h4,
+body.dark-mode .rodent-card h5,
+body.dark-mode .rodent-card h6,
+body.dark-mode .rodent-card p,
+body.dark-mode .rodent-card span,
+body.dark-mode .rodent-card a,
+body.dark-mode .rodent-card li {
+  color: #fff !important;
+}
+
+/* Footer en mode sombre */
+body.dark-mode footer {
+  background: #000 !important;          /* Fond noir */
+  background-color: #000 !important;    /* Sécurité */
+  color: #e6e6e6 !important;            /* Texte clair */
+}
+/* ===== CONTACT — Mode sombre ===== */
+
+body.dark-mode .contact-section {
+  background-color: #000 !important;
+  color: #e6e6e6 !important;
+}
+
+/* Titres et paragraphes */
+body.dark-mode .contact-section h2,
+body.dark-mode .contact-section p,
+body.dark-mode .contact-section h3 {
+  color: #fff !important;
+}
+
+/* Conteneur du formulaire */
+body.dark-mode .contact-form {
+  background-color: #1b1b1b !important;
+  color: #fff !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important;
+}
+
+/* Labels */
+body.dark-mode .contact-form label {
+  color: #e6e6e6 !important;
+}
+
+/* Inputs & textarea */
 body.dark-mode .contact-form input,
 body.dark-mode .contact-form textarea {
-  background: #111827 !important; color: #e5e7eb !important; border: 1px solid rgba(255,255,255,0.08) !important;
+  background-color: #111 !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
 }
+
+/* Placeholder en mode sombre */
 body.dark-mode .contact-form input::placeholder,
-body.dark-mode .contact-form textarea::placeholder { color: #94a3b8 !important; }
-body.dark-mode .contact-form .btn-primary { background: linear-gradient(135deg, var(--color-green-dark), var(--color-green-primary)) !important; color: #0b1220 !important; }
+body.dark-mode .contact-form textarea::placeholder {
+  color: #aaa !important;
+}
 
-/* Login */
-body.dark-mode .signup-link,
-body.dark-mode .remember-me,
-body.dark-mode .login-form label { color: #cbd5e1 !important; }
-body.dark-mode .signup-link a,
-body.dark-mode .forgot-password { color: var(--color-green-primary) !important; }
-body.dark-mode .signup-link a:hover,
-body.dark-mode .forgot-password:hover { color: var(--color-orange-primary) !important; }
-body.dark-mode .input-icon { color: var(--color-green-primary) !important; }
-body.dark-mode .input-wrapper:focus-within .input-icon { color: var(--color-orange-primary) !important; }
-body.dark-mode .login-form input[type="email"],
-body.dark-mode .login-form input[type="password"] {
-  background: #111827 !important; color: #e5e7eb !important; border-color: rgba(255,255,255,0.08) !important;
+/* Bouton */
+body.dark-mode .contact-form .btn-primary {
+  background-color: #333 !important;
+  color: #fff !important;
 }
-body.dark-mode .login-form input[type="email"]:focus,
-body.dark-mode .login-form input[type="password"]:focus {
-  border-color: var(--color-green-primary) !important;
-}
-body.dark-mode .login-form .btn-primary {
-  background: linear-gradient(135deg, var(--color-green-dark), var(--color-green-primary)) !important;
-  color: #0b1220 !important;
-}
-body.dark-mode .error-message { color: #fb7185 !important; }           /* Rose 400 */
-body.dark-mode .login-form input.error {
-  background: #3f1d1d !important; border-color: #fb7185 !important;
-}
-body.dark-mode .success-message { background: #065f46 !important; color: #e5e7eb !important; }
 
-/* Panier */
-body.dark-mode .cart { background: #0b1220 !important; color: #e5e7eb !important; box-shadow: 0 10px 30px rgba(0,0,0,0.6) !important; }
-body.dark-mode .cart h1 { -webkit-text-fill-color: #e5e7eb !important; color: #e5e7eb !important; }
-body.dark-mode #cart-list li {
-  background: #0f172a !important; border-left-color: #334155 !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; color: #e5e7eb !important;
+body.dark-mode .contact-form .btn-primary:hover {
+  background-color: #555 !important;
 }
-body.dark-mode #cart-list li:hover { border-left-color: #64748b !important; box-shadow: 0 8px 25px rgba(0,0,0,0.65) !important; }
-body.dark-mode #cart-list li img { box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important; }
-body.dark-mode .cart p { background: #0f172a !important; color: #e5e7eb !important; box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important; }
-body.dark-mode .remove-btn { background: #111827 !important; color: #e5e7eb !important; }
-body.dark-mode .remove-btn:hover { background: #1f2937 !important; }
 
-/* Images: preserve their original colors */
-body.dark-mode img {
-  background: transparent !important;
+/* Contact info bloc */
+body.dark-mode .contact-info {
+  color: #fff !important;
+}
+
+body.dark-mode .contact-info h3 {
+  color: #fff !important;
+}
+
+/* ===== INFO CARD — Mode sombre ===== */
+
+body.dark-mode .info-card {
+  background-color: #1c1c1c !important;      /* Fond sombre */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important;
+}
+
+body.dark-mode .info-card h4 {
+  color: #ff9a3c !important;  /* Orange clair visible en sombre */
+}
+
+body.dark-mode .info-card p {
+  color: #e6e6e6 !important;
+}
+
+/* Image : ne pas la modifier, garder couleurs réelles */
+body.dark-mode .info-card img {
   filter: none !important;
   opacity: 1 !important;
 }
 
-/* Mobile tweaks preserved */
-@media screen and (max-width: 768px) {
-  body.dark-mode header { padding: 15px 20px !important; }
-  body.dark-mode .banner { min-height: 400px !important; padding: 60px 15px !important; }
-  body.dark-mode .banner-content { padding: 30px 20px !important; }
+/* ========================= */
+/*        MODE SOMBRE        */
+/*       PAGE - PANIER       */
+/* ========================= */
+
+/* Conteneur principal du panier */
+body.dark-mode .cart {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6) !important;
 }
-@media screen and (max-width: 480px) {
-  body.dark-mode header { padding: 10px 15px !important; }
+
+/* Titre du panier */
+body.dark-mode .cart h1 {
+  background: none !important;   /* Enlever le dégradé texte */
+  -webkit-text-fill-color: #fff !important;
+  color: #fff !important;
+}
+
+/* Icône du panier */
+body.dark-mode .cart img[alt="ton panier"] {
+  filter: none !important;
+}
+
+/* Liste des articles */
+body.dark-mode #cart-list li {
+  background-color: #1c1c1c !important;
+  border-left-color: #555 !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+  color: #fff !important;
+}
+
+body.dark-mode #cart-list li:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7) !important;
+  border-left-color: #999 !important;
+}
+
+/* Image des articles */
+body.dark-mode #cart-list li img {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+}
+
+/* Total */
+body.dark-mode .cart p {
+  background: #222 !important;
+  color: #fff !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important;
+}
+
+/* Bouton supprimer */
+body.dark-mode .remove-btn {
+  background: #333 !important;
+  color: #fff !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5) !important;
+}
+
+body.dark-mode .remove-btn:hover {
+  background: #555 !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.7) !important;
+}
+/* ===================================== */
+/*         MODE SOMBRE — PAGE LOGIN      */
+/* ===================================== */
+
+/* SECTION */
+body.dark-mode .login-section {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* CONTAINER */
+body.dark-mode .login-container {
+  background-color: #1c1c1c !important;
+  color: #8BC34A  !important; /* Même vert que la version claire */
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* TITRE */
+body.dark-mode .login-container h2 {
+ color: #8BC34A  !important;
+}
+
+/* PARAGRAPHES */
+body.dark-mode .login-container > p,
+body.dark-mode .signup-link,
+body.dark-mode .remember-me,
+body.dark-mode .login-form label {
+  color: #ddd !important;
+}
+
+/* LIENS */
+body.dark-mode .signup-link a,
+body.dark-mode .forgot-password {
+  color: #8BC34A !important;
+}
+
+body.dark-mode .signup-link a:hover,
+body.dark-mode .forgot-password:hover {
+  color: #FF9800 !important;
+}
+
+/* ICONES INPUT */
+body.dark-mode .input-icon {
+  color: #8BC34A !important;
+}
+
+body.dark-mode .input-wrapper:focus-within .input-icon {
+  color: #FF9800 !important;
+}
+
+/* INPUTS */
+body.dark-mode .login-form input[type="email"],
+body.dark-mode .login-form input[type="password"] {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+
+body.dark-mode .login-form input[type="email"]:focus,
+body.dark-mode .login-form input[type="password"]:focus {
+  border-color: #8BC34A !important;
+}
+
+/* CHECKBOX */
+body.dark-mode .remember-me input[type="checkbox"] {
+  accent-color: #8BC34A !important;
+}
+
+/* BOUTON LOGIN */
+body.dark-mode .login-form .btn-primary {
+  background-color: #4CAF50 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .login-form .btn-primary:hover {
+  background-color: #388E3C !important;
+}
+
+/* ERREURS & SUCCESS */
+body.dark-mode .error-message {
+  color: #ff6b6b !important;
+}
+
+body.dark-mode .login-form input.error {
+  background-color: #442222 !important;
+  border-color: #ff6b6b !important;
+}
+
+body.dark-mode .success-message {
+  background-color: #2e7d32 !important;
+  color: #fff !important;
+}
+/* ============================== */
+/*       MODE SOMBRE - A PROPOS   */
+/* ============================== */
+
+/* FOND DE PAGE */
+body.dark-mode {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* HERO SECTION */
+body.dark-mode .about-hero-text h1 {
+  color: #fff !important;
+}
+
+body.dark-mode .about-hero-text p {
+  color: #ddd !important;
+}
+
+/* IMAGE */
+body.dark-mode .about-hero-image img {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.08) !important;
+}
+
+/* SECTION */
+body.dark-mode .about-section {
+  background-color: #000 !important;
+}
+
+body.dark-mode .about-section h2 {
+  color: #fff !important;
+}
+
+/* GRID & CARDS */
+body.dark-mode .about-card {
+  background-color: #1a1a1a !important;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-mode .about-card h3 {
+  color: #fff !important;
+}
+
+body.dark-mode .about-card p {
+  color: #ccc !important;
+}
+
+/* STORY SECTION */
+body.dark-mode .story_content p {
+  color: #ddd !important;
+}
+/* MODE SOMBRE — BACKGROUND GLOBAL */
+body.dark-mode {
+  background: #000 !important;       /* Fond noir */
+  color: #e6e6e6 !important;         /* Texte clair */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Bouton général */
+.glow-toggle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #8BC34A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* Icône par défaut (Light Mode = Soleil) */
+.glow-toggle .icon {
+  font-size: 22px;
+  transition: color 0.4s, text-shadow 0.4s, transform 0.4s;
+  color: #f1c40f;
+  text-shadow: 0 0 10px rgba(255, 196, 0, 0.6);
+}
+
+/* Mode sombre */
+body.dark-mode .glow-toggle {
+  background: #8BC34A;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+}
+
+/* Icône en mode sombre (Lune Glow bleu) */
+body.dark-mode .glow-toggle .icon {
+  color: #73c7ff;
+  text-shadow: 0 0 15px rgba(0, 150, 255, 0.8);
+  transform: rotate(20deg);
+}
+
+/* Animation au clic */
+.glow-toggle:active .icon {
+  transform: scale(0.9);
+}
+/* ===== MODE SOMBRE : PAGE SIGNUP ===== */
+body.dark-mode .signup-section {
+  background-color: #0d1117; /* Fond sombre élégant */
+}
+
+body.dark-mode .signup-container {
+  background-color: #161b22; /* Carte sombre */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .signup-container h2 {
+  color: #8BC34A; /* Même vert que la version claire */
+}
+
+body.dark-mode .signup-container p,
+body.dark-mode .form-group label,
+body.dark-mode .signin-link {
+  color: #e6e6e6; /* Texte clair */
+}
+
+/* Inputs */
+body.dark-mode .input-wrapper input {
+  background-color: #0f141a;
+  border-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .input-wrapper input:focus {
+  border-color: #8BC34A;
+}
+
+/* Icônes */
+body.dark-mode .input-icon {
+  color: #8BC34A;
+}
+
+body.dark-mode .input-wrapper:focus-within .input-icon {
+  color: #FF9800;
+}
+
+/* Checkbox */
+body.dark-mode .accept-terms {
+  color: #ddd;
+}
+
+/* Bouton */
+body.dark-mode .btn-primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #43a047;
 }
