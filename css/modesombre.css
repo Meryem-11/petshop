@@ -285,3 +285,77 @@ body.dark-mode img {
 @media screen and (max-width: 480px) {
   body.dark-mode header { padding: 10px 15px !important; }
 }
+/* SIGNUP — Dark Mode (même style que Login) */
+body.dark-mode .signup-section {
+  background: #0f172a !important;
+}
+
+body.dark-mode .signup-container {
+  background: #0f172a !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .signup-container h2 {
+  color: var(--color-green-primary) !important;
+}
+
+body.dark-mode .signup-container p,
+body.dark-mode .signup-form label,
+body.dark-mode .signin-link {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .signin-link a {
+  color: var(--color-green-primary) !important;
+}
+
+body.dark-mode .signin-link a:hover {
+  color: var(--color-orange-primary) !important;
+}
+
+body.dark-mode .input-icon {
+  color: var(--color-green-primary) !important;
+}
+
+body.dark-mode .input-wrapper {
+  background: #111827 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+body.dark-mode .input-wrapper:focus-within {
+  border-color: var(--color-green-primary) !important;
+}
+
+body.dark-mode .input-wrapper:focus-within .input-icon {
+  color: var(--color-orange-primary) !important;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"] {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+}
+
+body.dark-mode input:focus {
+  border-color: var(--color-green-primary) !important;
+}
+
+body.dark-mode .btn-primary {
+  background: linear-gradient(135deg, var(--color-green-dark), var(--color-green-primary)) !important;
+  color: #0b1220 !important;
+}
+
+body.dark-mode .btn-primary:hover {
+  filter: brightness(1.1) !important;
+}
+
+body.dark-mode .accept-terms span {
+  color: #cbd5e1 !important;
+}
+
+/* Checkbox en dark mode */
+body.dark-mode input[type="checkbox"] {
+  accent-color: var(--color-green-primary) !important;
+}

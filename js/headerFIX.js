@@ -142,7 +142,9 @@ function loadHeader() {
               <span class="subtotal" id="mini-cart-subtotal">0 DH</span>
             </div>
             <a href="./panier.html" class="btn-secondary" style="display:block; text-align:center; margin-bottom:8px;">Voir le panier</a>
-            <button class="checkout-btn" type="button">Procéder au paiement</button>
+          <button class="checkout-btn" type="button" onclick="window.location.href='paiment.html'">
+           Procéder au paiement
+      </button>
           </div>
         </aside>
         <div class="quickview-overlay" id="quickview-overlay"></div>
@@ -511,5 +513,9 @@ function loadHeader() {
     })();
 }
 
+
 // Charger le header automatiquement quand le DOM est prêt
 document.addEventListener("DOMContentLoaded", loadHeader);
+
+
+

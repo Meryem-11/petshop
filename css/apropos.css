@@ -87,9 +87,11 @@ body { background-color: #ffffff !important; }
     
     flex: 1;           /* Elles grandissent pour remplir le vide */
     /* ----------------------- */
-    
+    min-height: 350px;
+
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     transition: transform 0.3s ease;
