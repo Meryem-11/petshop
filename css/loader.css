@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background: linear-gradient(135deg, #10b981 0%, #34d399 25%, #f59e0b 50%, #f97316 75%, #22c55e 100%);
   background-size: 400% 400%;
   animation: gradient-shift 8s ease infinite;
   z-index: 9999;
@@ -45,7 +45,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
   animation: pulse-glow 3s ease-in-out infinite;
   top: 50%;
   left: 50%;
@@ -85,7 +85,7 @@ body.dark-mode {
 }
 
 body.dark-mode .page-loader {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #e94560 100%);
+  background: linear-gradient(135deg, #047857 0%, #059669 25%, #d97706 50%, #ea580c 75%, #16a34a 100%);
   background-size: 400% 400%;
   animation: gradient-shift 8s ease infinite;
 }
@@ -96,7 +96,7 @@ body.dark-mode .page-loader::before {
 }
 
 body.dark-mode .page-loader::after {
-  background: radial-gradient(circle, rgba(249, 158, 11, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
 }
 
 body.dark-mode .loader-spinner {
