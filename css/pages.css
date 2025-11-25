@@ -1271,6 +1271,9 @@ body.no-scroll {
 .bird-btn,
 .fish-btn,
 .rodent-btn {
+  display: flex;              /* ACTIVE FLEXBOX */
+  justify-content: center;    /* CENTRE HORIZONTAL */
+  align-items: center;
   color: white;
   border: none;
   padding: 12px 30px;

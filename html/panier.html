@@ -30,7 +30,11 @@
         <div class="row"><span>Réduction</span><span id="summary-discount">-0 DH</span></div>
         <div class="row"><span>Livraison</span><span id="summary-shipping">20 DH</span></div>
         <div class="row total"><span>Total</span><span id="summary-total">0 DH</span></div>
-        <button class="checkout-btn" type="button">Procéder au paiement</button>
+<button class="checkout-btn" type="button" onclick="window.location.href='paiment.html'">
+  Procéder au paiement
+</button>
+
+
         <div class="summary-actions">
           <a href="./index.html" class="btn-secondary">Continuer mes achats</a>
           <button id="clear-cart" class="btn-danger" type="button">Vider le panier</button>
@@ -231,6 +235,13 @@
     window.addEventListener('storage', (e) => {
       if (e.key === 'cart' || e.key === 'promoCode') displayCart();
     });
+
+
+    localStorage.setItem('subtotal', summarySubtotal.textContent);
+localStorage.setItem('discount', summaryDiscount.textContent);
+localStorage.setItem('shipping', summaryShipping.textContent);
+localStorage.setItem('total', summaryTotal.textContent);
+
   </script>
 <script src="../js/footerFIX.js" defer></script>
 <script src="../js/theme.js"></script>

@@ -1,0 +1,212 @@
+.payment-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.payment-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff8c00;
+  font-size: 2.2rem;
+}
+
+.payment-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* -------- FORMULAIRE -------- */
+.payment-form {
+  flex: 1 1 500px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 5px solid #90cd39;
+}
+
+.payment-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+.payment-form label {
+  font-weight: 600;
+  display: block;
+  margin: 12px 0 5px;
+}
+
+.payment-form input,
+.payment-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  font-size: 1rem;
+}
+
+.payment-form input:focus,
+.payment-form select:focus {
+  outline: none;
+  border-color: #90cd39;
+}
+
+.pay-now {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  background: #ff8c00;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pay-now:hover {
+  background: #e67600;
+}
+
+/* -------- RÉSUMÉ -------- */
+.payment-summary {
+  flex: 1 1 350px;
+}
+
+.summary-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.summary-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #78cf2f;
+  color: white !important;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #5cab24;
+}
+/* ===== Paiement - Dark Mode ===== */
+body.dark-mode .payment-container {
+  background: #0b1220 !important;
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .payment-container h1 {
+  color: var(--color-orange-primary) !important;
+}
+
+body.dark-mode .payment-layout {
+  gap: 30px;
+}
+
+/* -------- FORMULAIRE -------- */
+body.dark-mode .payment-form {
+  background: #0f172a !important;
+  border-left: 5px solid var(--color-green-primary) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+  color: var(--color-text-dark) !important;
+}
+
+body.dark-mode .payment-form h2 {
+  color: var(--color-green-primary) !important;
+}
+
+body.dark-mode .payment-form label {
+  color: var(--color-text-secondary) !important;
+}
+
+body.dark-mode .payment-form input,
+body.dark-mode .payment-form select {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+body.dark-mode .payment-form input:focus,
+body.dark-mode .payment-form select:focus {
+  border-color: var(--color-green-primary) !important;
+}
+
+body.dark-mode .pay-now {
+  background: var(--color-orange-primary) !important;
+  color: #111 !important;
+}
+
+body.dark-mode .pay-now:hover {
+  background: var(--color-orange-dark) !important;
+}
+
+/* -------- RÉSUMÉ -------- */
+body.dark-mode .payment-summary .summary-card {
+  background: #0f172a !important;
+  color: var(--color-text-dark) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-mode .summary-card h3 {
+  color: var(--color-green-primary) !important;
+}
+
+body.dark-mode .summary-card .row {
+  color: var(--color-text-secondary) !important;
+}
+
+body.dark-mode .summary-card .row.total {
+  color: var(--color-orange-primary) !important;
+  border-top: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+body.dark-mode .btn-secondary {
+  background: var(--color-green-primary) !important;
+  color: #0b1220 !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: var(--color-green-dark) !important;
+  color: #fff !important;
+}
+
+/* Mobile tweaks */
+@media screen and (max-width: 768px) {
+  body.dark-mode .payment-layout {
+    flex-direction: column;
+  }
+}
