@@ -1,0 +1,298 @@
+/* Loader styles: full-screen centered spinner and fade-out */
+:root {
+  --loader-bg: #ffffff;
+  --loader-color: #2e86de;
+}
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #10b981 0%, #34d399 25%, #f59e0b 50%, #f97316 75%, #22c55e 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+  z-index: 9999;
+  transition: opacity 360ms ease, visibility 360ms ease;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animated shapes in the background */
+.page-loader::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: pattern-move 20s linear infinite;
+  opacity: 0.3;
+}
+
+.page-loader::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+  animation: pulse-glow 3s ease-in-out infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes pattern-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.6; }
+}
+
+.page-loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 6px solid rgba(0,0,0,0.08);
+  border-top-color: var(--loader-color);
+  animation: loader-spin 1s linear infinite;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Dark-mode overrides so loader matches the site theme */
+body.dark-mode {
+  --loader-bg: #0b1220; /* dark panel */
+  --loader-color: var(--color-orange-primary, #f59e0b);
+}
+
+body.dark-mode .page-loader {
+  background: linear-gradient(135deg, #047857 0%, #059669 25%, #d97706 50%, #ea580c 75%, #16a34a 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+body.dark-mode .page-loader::before {
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  opacity: 0.2;
+}
+
+body.dark-mode .page-loader::after {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+}
+
+body.dark-mode .loader-spinner {
+  border: 6px solid rgba(255,255,255,0.06);
+  border-top-color: var(--loader-color);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* Image-based loader (dog / cat) */
+.loader-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+  transform-origin: 50% 50%;
+  animation: loader-bob 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.12));
+}
+
+@keyframes loader-bob {
+  0% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-8px) scale(1.02); }
+  50% { transform: translateY(0) scale(1); }
+  75% { transform: translateY(6px) scale(0.98); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Slight color/contrast tweak for dark mode */
+body.dark-mode .loader-img {
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.5)) saturate(0.9) brightness(0.95);
+}
+
+/* SVG icon loader (dog) */
+.loader-icon {
+  width: 200px;
+  height: 200px;
+  display: block;
+  color: var(--loader-icon-color, #f59e0b);
+  animation: loader-bob 1.6s ease-in-out infinite;
+}
+
+.loader-icon #tail {
+  transform-box: fill-box;
+  transform-origin: 85% 50%;
+  animation: wag 0.8s ease-in-out infinite;
+}
+
+@keyframes wag {
+  0% { transform: rotate(12deg); }
+  50% { transform: rotate(-12deg); }
+  100% { transform: rotate(12deg); }
+}
+
+/* Dark mode tweaks for SVG loader */
+body.dark-mode .loader-icon {
+  color: var(--color-orange-primary, #f59e0b);
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.5)) saturate(0.95) brightness(0.9);
+}
+
+/* Video loader styling */
+.loader-video {
+  width: 280px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* GIF fallback / preferred GIF styling */
+.loader-gif {
+  width: 280px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Ensure loader-content is centered */
+.page-loader .loader-content { gap: 4px; }
+
+
+/* Responsive: reduce loader size on small screens */
+@media (max-width: 480px) {
+  .loader-video, .loader-gif {
+    width: 200px;
+  }
+  .loader-text { font-size: 1rem; }
+}
+
+/* Attempt to visually remove the GIF/video background when possible.
+   Note: CSS can only influence blending/visuals — it cannot truly remove pixels
+   from a non-transparent GIF. For best result provide a GIF/WebM with alpha
+   or an APNG. Below we set transparent backgrounds and a blend mode that
+   often hides plain white backgrounds on colored pages. */
+.loader-gif, .loader-video {
+  background: transparent;
+  /* If the GIF has a plain white background, `mix-blend-mode: multiply` can
+     make the white become transparent-ish over darker backgrounds. */
+  mix-blend-mode: multiply;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* If the page background is light, multiply may darken; you can switch to
+   `screen` for dark GIF backgrounds. */
+.page-loader.light-bg .loader-gif,
+.page-loader.light-bg .loader-video {
+  mix-blend-mode: screen;
+}
+
+/* Loader content wrapper and text */
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.loader-text {
+  margin-top: 0px;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 700;
+  font-size: 1.75em; /* ~20px */
+  /* Gradient text with shimmer */
+  background: linear-gradient(90deg, #ff9a00 8%, #ff5a00 40%, #ffd16b 72%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.4px;
+  display: block;
+  text-align: center;
+  animation: text-shimmer 2.8s linear infinite;
+  position: relative;
+  padding-right: 30px; /* space for dots */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.dark-mode .loader-text {
+  /* keep gradient but slightly dim for dark mode */
+  filter: brightness(0.95) saturate(1.05);
+}
+
+/* shimmer animation */
+@keyframes text-shimmer {
+  0% { background-position: 0% 50%; transform: translateY(0); }
+  50% { background-position: 100% 50%; transform: translateY(-2px); }
+  100% { background-position: 0% 50%; transform: translateY(0); }
+}
+
+/* animated trailing dots */
+.loader-text::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 800;
+  color: rgba(0,0,0,0.18);
+  opacity: 0.95;
+  font-size: 1.05rem;
+  animation: dots 1.4s steps(4, end) infinite;
+}
+
+body.dark-mode .loader-text::after {
+  color: rgba(255,255,255,0.85);
+}
+
+@keyframes dots {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+  100% { content: ''; }
+}
+
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Prevent page scroll while loading */
+body.loading {
+  overflow: hidden;
+}
+
+/* Accessible hidden text */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
